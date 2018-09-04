@@ -1,0 +1,44 @@
+// Place all the styles related to the root controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar-default {
+  background-color: #83ff00 !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ff008e !important;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: #ff008e !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ff008e !important;
+}
+
+a {
+  color: #d60cb1 !important;
+}
+
+.btn-primary {
+  background-color: #00d9ff !important;
+  border-color: #ababab !important;
+}
+
+
+.card-img-top {
+  overflow: hidden;
+  border-radius: 0.2em;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 3em;
+  height: 3em;
+  margin: 0;
+  margin-right: 0.2em;
+  display: inline-block;
+  vertical-align: middle;
+}

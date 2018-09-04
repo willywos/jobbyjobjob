@@ -17,13 +17,17 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  # For details on connection pooling, see Rails configuration guide
-  # http://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 100
+  username: postgres
+  password: test
+  allow_concurrency: true
 
 development:
   <<: *default
-  database: JobbyJobJob_development
+  database: <%= (ENV["DB_DATABASE"] || 'jobbyjobjob_development') %>
+  username: <%= (ENV["DB_USERNAME"] || 'postgres') %>
+  password: <%= (ENV["DB_PASSWORD"] || 'test') %>
+  host: <%= (ENV["DB_HOST"] || 'localhost') %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +61,10 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: JobbyJobJob_test
+  database: jobbyjobjob_test
+  username: postgres
+  password: test
+  host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +87,4 @@ test:
 #
 production:
   <<: *default
-  database: JobbyJobJob_production
-  username: JobbyJobJob
-  password: <%= ENV['JOBBYJOBJOB_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
