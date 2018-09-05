@@ -19,6 +19,7 @@ class IndeedParser < JobParser
   end
 
   def get_company_from_title(title)
-    title.split(" - ").second()
+    title_split = title.split(" - ")
+    title_split[(title_split.count - 2)]
   end
 end

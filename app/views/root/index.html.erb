@@ -15,10 +15,13 @@
 
       <% @job_postings.each do |posting| %>
         <div class="media">
+
           <div class="media-left">
-            <a href="#">
+            <% if posting.logo.blank? %>
+              <div class="card-img-top color-box" style="background:#<%= posting.random_color %>;"><%= posting.company_initials %></div>
+            <% else %>
               <img class="card-img-top" src="<%= posting.logo %>" alt="Card image cap">
-            </a>
+            <% end %>
           </div>
           <div class="media-body">
             <h4 class="media-heading"><%= link_to posting.title, posting.url, target:"_blank" %> <br><small><%= posting.company %> | <%= local_time(posting.publish_date, '%B %e, %Y') %></small></h4>
@@ -28,14 +31,6 @@
         <hr>
       <% end %>
 
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#">&larr; Older</a>
-        </li>
-        <li class="page-item disabled">
-          <a class="page-link" href="#">Newer &rarr;</a>
-        </li>
-      </ul>
     </div>
 
     <!-- Sidebar Widgets Column -->

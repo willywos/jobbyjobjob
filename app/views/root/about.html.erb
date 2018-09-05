@@ -1,0 +1,33 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="page-header">
+        <%= image_tag('about.jpg', class:'img-rounded img-responsive') %>
+        <br>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <br><br>
+      <%= image_tag('logo.png') %>
+      <br><br>
+      <h4>Welcome to Jobby Job Job!</h4>
+      My name is Will Wilimek. I created this site to
+      aggregate remote developer jobs so I wouldn't have to use 4 different job
+      boards when I'm looking for interesting jobs or projects. I also wanted
+      to use this project as an example of my experience working with Ruby/Rails
+      since most of my code is owned by a company and can't be released.
+      <br><br>
+      The site is currently hosted on heroku (free). It uses a postgres backend database and
+      a scheduler job to populate jobs 4 times a day from various job boards.
+      <br><br>
+      If you want to check out more about me you can find my blog at <%= link_to 'wosnet.net', 'https://www.wosnet.net/' %>
+      <br><br>
+      If you want to hack on this project with me you can check it out on <%= link_to 'GitHub.', 'https://github.com/willywos/jobby_job_job' %> Pull requests welcome!
+      <br><br>
+      <== This is me and my kids on vacation!
+      <br><br>
+      Feel free to reach out if you have a feature or bug or just wanna work on this or wanna know how something here works. <%= link_to 'Contact Me', 'mailto:wwilimek@gmail.com' %>
+    </div>
+  </div>
+</div>
