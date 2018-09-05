@@ -1,10 +1,10 @@
 class JobPosting < ApplicationRecord
   include PgSearch
-  multisearchable :against => [:name, :description]
+  multisearchable :against => [:title, :description]
 
-  pg_search_scope :search_by_name,
+  pg_search_scope :search_by_title,
                   :against => {
-                    :name => 'A',
+                    :title => 'A',
                   },
                   :using => {
                     :tsearch => { dictionary: 'english', :any_word => true, :prefix => true}

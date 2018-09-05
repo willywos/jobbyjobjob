@@ -1,0 +1,18 @@
+<div class="job_posts">
+  <% job_postings.each do |posting| %>
+    <div class="media">
+      <div class="media-left">
+        <% if posting.logo.blank? %>
+          <div class="card-img-top color-box" style="background:#<%= posting.random_color %>;"><%= posting.company_initials %></div>
+        <% else %>
+          <img class="card-img-top" src="<%= posting.logo %>" alt="Card image cap">
+        <% end %>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= link_to posting.title, posting.url, target:"_blank" %> <br><small><%= posting.company %> | <%= local_time(posting.publish_date, '%B %e, %Y') %></small></h4>
+        <%= truncate(posting.description, length: 300) %>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+</div>

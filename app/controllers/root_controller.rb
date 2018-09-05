@@ -5,4 +5,8 @@ class RootController < ApplicationController
 
   def about
   end
+
+  def search
+    @job_postings = params[:query].blank? ? JobPosting.all.order("publish_date desc") : JobPosting.search_by_title(params[:query])
+  end
 end
