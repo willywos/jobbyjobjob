@@ -1,4 +1,6 @@
 class RootController < ApplicationController
+
+
   def index
     @job_postings = JobPosting.all.order("publish_date desc")
   end
@@ -8,5 +10,9 @@ class RootController < ApplicationController
 
   def search
     @job_postings = params[:query].blank? ? JobPosting.all.order("publish_date desc") : JobPosting.search_by_title(params[:query])
+  end
+
+  def view_post
+    @posting = JobPosting.find(params[:id])
   end
 end

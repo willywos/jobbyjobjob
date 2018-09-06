@@ -9,7 +9,7 @@
         <% end %>
       </div>
       <div class="media-body">
-        <h4 class="media-heading"><%= link_to posting.title, posting.url, target:"_blank" %> <br><small><%= posting.company %> | <%= local_time(posting.publish_date, '%B %e, %Y') %></small></h4>
+        <h4 class="media-heading"><%= link_to posting.title, view_post_path(posting), target:"_blank" %> <br><small><%= posting.company %> | <%= local_time(posting.publish_date, '%B %e, %Y') %> | <%= link_to 'View Original Post', posting.url, target:"_blank" %></small></h4> 
         <%= truncate(posting.description, length: 300) %>
       </div>
     </div>

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="job_posts">
+
+          <div class="media">
+            <div class="media-left">
+              <% if @posting.logo.blank? %>
+                <div class="card-img-top color-box" style="background:#<%= @posting.random_color %>;"><%= @posting.company_initials %></div>
+              <% else %>
+                <img class="card-img-top" src="<%= @posting.logo %>" alt="Card image cap">
+              <% end %>
+            </div>
+            <div class="media-body">
+              <div class="pull-right"><%= link_to 'Back', root_path, class:'btn btn-primary' %></div>
+              <h4 class="media-heading"><%= link_to @posting.title, @posting.url, target:"_blank" %> <br><small><%= @posting.company %> | <%= local_time(@posting.publish_date, '%B %e, %Y') %></small></h4>
+              <hr>
+              <span style="white-space: pre-line;">
+              <%= auto_link(@posting.description, :html => { :target => '_blank' }) %>
+              </span>
+              <div class="center">
+                <%= link_to 'View Original Job Post', @posting.url, target:"_blank", class:'btn btn-primary' %>
+              </div>
+            </div>
+          </div>
+          <hr>
+      </div>
+
+    </div>
+  </div>
+</div>
