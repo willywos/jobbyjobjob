@@ -29,10 +29,5 @@ If you want to help me with this project by adding a feature, another job board
 or fixing a bug please just submit a pull request. I will probably accept it.
 If you don't then I hate you.
 
-This is a good project to work on if you want to do [Hacktoberfest](https://hacktoberfest.digitalocean.com/) #Hacktoberfest
-Some things that might be fun to work on:
-- Adding ability to login to save jobs
-- Adding your resume.
-- Add stackoverflow jobs.
-- Add some cool graphics
-- Update the layout for the job post so it looks nicer.
+This is a good project to work on if you want to do [Hacktoberfest](https://hacktoberfest.digitalocean.com/) #Hacktoberfest. Check out this [issue](https://github.com/willywos/jobbyjobjob/issues/1) for some ideas or feel free to add to the list.
+
