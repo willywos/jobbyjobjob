@@ -37,6 +37,7 @@ module JobbyJobJob
         parser = JobbyJobJob::Parser.new(res, job_site)
         parser.process_mapping!
       end
+      PgSearch::Multisearch.rebuild(JobPosting, false)
     end
 
     def delete_all!

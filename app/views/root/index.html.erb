@@ -13,15 +13,16 @@
       <div class="card ">
         <h5 class="card-header">Search</h5>
         <div class="card-body">
-          <div class="input-group">
-            <%= form_with url: search_path, id:'searchForm' do |form| %>
-              <%= form.text_field :query, class:'form-control', placeholder:'Search for...' %>
-              <span class="input-group-btn">
+
+            <%= form_with url: search_path, id:'searchForm', class:'form-inline' do |form| %>
+              <div class='form-group'>
+                <div class="input-group">
+                  <%= form.text_field :query, class:'form-control', placeholder:'Search for...' %>
+                </div>
+              </div>
                 <%= form.submit "Go!", class:"btn btn-primary" %>
-              </span>
-            <% end %>
+              <% end %>
           </div>
-        </div>
       </div>
       <div class="card ">
         <h5 class="card-header">Quick Search</h5>
@@ -70,7 +71,7 @@
           <h5 class="card-header">Jobby Job Job Status</h5>
           <div class="card-body">
             <strong>Last Refresh:</strong> <br>
-            <%= local_time(JobPosting.first.created_at, format: '%B %e, %Y %l:%M%P') %>
+            <%= local_time(JobPosting.last.created_at, format: '%B %e, %Y %l:%M%P') %>
             <br><br>
             <strong>Total Number Of Jobs:</strong><br> <%= JobPosting.all.count %>
           </div>
