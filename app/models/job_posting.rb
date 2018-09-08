@@ -1,6 +1,6 @@
 class JobPosting < ApplicationRecord
   include PgSearch
-  multisearchable :against => [:title, :description]
+  multisearchable :against => [:title, :company]
 
   pg_search_scope :search_by_title,
                   :against => {
