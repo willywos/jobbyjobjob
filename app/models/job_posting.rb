@@ -8,7 +8,8 @@ class JobPosting < ApplicationRecord
                   },
                   :using => {
                     :tsearch => { dictionary: 'english', :any_word => true, :prefix => true}
-                  }
+                  },
+                  :order_within_rank => "job_postings.publish_date DESC"
 
 
   def company_initials
