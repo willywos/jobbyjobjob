@@ -11,7 +11,8 @@ class GithubJobParser < JobParser
         publish_date: item["created_at"],
         company: item["company"],
         url: item["url"],
-        logo: item["company_logo"]
+        logo: item["company_logo"],
+        job_board: "GitHub"
       }
     }
   end

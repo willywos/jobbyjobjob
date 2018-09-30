@@ -13,7 +13,8 @@ class WeWorkRemotelyParser < JobParser
         publish_date: item.published,
         company: get_company_from_title(item.title),
         url: item.url,
-        logo: item.image
+        logo: item.image,
+        job_board: "WeWorkRemotely"
       }
     }
   end

@@ -13,7 +13,8 @@ class RemoteOkParser < JobParser
         publish_date: Time.at(item["epoch"].to_i).to_datetime.to_s,
         company: item["company"],
         url: item["url"],
-        logo: item["logo"]
+        logo: item["logo"],
+        job_board: "RemoteOk"
       } if item["legal"].blank?
     }
   end

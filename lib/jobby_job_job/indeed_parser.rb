@@ -13,9 +13,11 @@ class IndeedParser < JobParser
         publish_date: item.published,
         company: get_company_from_title(item.title),
         url: item.url,
-        logo: item.image.blank? ? "" : item.image
+        logo: item.image.blank? ? "" : item.image,
+        job_board: "Indeed"
       }
     }
+    data
   end
 
   def get_company_from_title(title)

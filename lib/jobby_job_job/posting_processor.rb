@@ -9,9 +9,14 @@ module JobbyJobJob
     def initialize
       @job_sites = [
         {
-          url:"https://remoteok.io/remote-dev-jobs.json",
-          format:"json",
-          parser:"RemoteOk"
+          url:"https://weworkremotely.com/categories/remote-programming-jobs.rss",
+          format:"rss",
+          parser:"WeWorkRemotely"
+        },
+        {
+          url:"http://rss.indeed.com/rss?q=Ruby,Rails,Go,Java,JavaScript,FrontEnd,Backend,Node,React,SQL,React+Native,DevOps,Full+Stack,Programmer,Programming,Developer,Web+Developer&l=Remote",
+          format:"rss",
+          parser:"Indeed"
         },
         {
           url:"https://jobs.github.com/positions.json?location=Remote",
@@ -19,14 +24,9 @@ module JobbyJobJob
           parser:"GithubJob"
         },
         {
-          url:"https://weworkremotely.com/categories/remote-programming-jobs.rss",
-          format:"rss",
-          parser:"WeWorkRemotely"
-        },
-        {
-          url:"http://rss.indeed.com/rss?q=programmer%2C+web+developer%2C+developer%2C+ruby%2C+go%2C+linux%2C+aws%2C+rails&l=Remote",
-          format:"rss",
-          parser:"Indeed"
+          url:"https://remoteok.io/remote-dev-jobs.json",
+          format:"json",
+          parser:"RemoteOk"
         }
       ]
     end
