@@ -1,10 +1,8 @@
-
-
 module JobbyJobJob
   class Response
     attr_accessor :data,
-		              :code,
-                  :headers
+      :code,
+      :headers
 
     def initialize(response={})
       @data = response[:body]

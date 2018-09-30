@@ -2,6 +2,7 @@ require_relative 'remote_ok_parser'
 require_relative 'github_job_parser'
 require_relative 'we_work_remotely_parser'
 require_relative 'indeed_parser'
+require_relative 'stack_overflow_parser'
 
 module JobbyJobJob
   class Parser
