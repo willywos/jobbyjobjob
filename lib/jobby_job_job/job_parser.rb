@@ -1,5 +1,3 @@
-
-
 class JobParser
 
   def initialize

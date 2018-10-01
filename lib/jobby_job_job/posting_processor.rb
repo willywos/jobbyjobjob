@@ -27,6 +27,11 @@ module JobbyJobJob
           url:"https://remoteok.io/remote-dev-jobs.json",
           format:"json",
           parser:"RemoteOk"
+        },
+        {
+          url:"https://stackoverflow.com/jobs/feed",
+          format:"rss",
+          parser:"StackOverflow"
         }
       ]
     end
