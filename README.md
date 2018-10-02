@@ -53,7 +53,7 @@ $ rails s
 2. Create a topic branch
 3. Implement your feature or bug fix
 4. Add tests for your feature or bug fix (if you want)
-5. Run `$ RSpec spec/` make sure tests pass.
+5. Run `$ rspec spec/` make sure tests pass.
 6. If your change affects something in this README, please update it
 7. Commit and push your changes
 8. Submit a pull request
