@@ -74,8 +74,19 @@
             <%= local_time(JobPosting.last.created_at, format: '%B %e, %Y %l:%M%P') %>
             <br><br>
             <strong>Total Number Of Jobs:</strong><br> <%= JobPosting.all.count %>
+            <% if session[:viewed_post_history] != nil && session[:viewed_post_history].length > 0 %>
+              <h5><strong>Your View History:</strong></h5>
+              <ul class="list-unstyled mb-0">
+                <% session[:viewed_post_history].each do |history| %>
+                  <li class="history-item">
+                    <%= link_to history["title"], "/post/" + history["id"].to_s, target: "_blank" %>
+                  </li>
+                <% end %>
+              </ul>
+            <% end %>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
