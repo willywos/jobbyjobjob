@@ -29,7 +29,7 @@ module JobbyJobJob
           parser:"RemoteOk"
         },
         {
-          url:"https://stackoverflow.com/jobs/feed",
+          url:"https://stackoverflow.com/jobs/feed?r=true",
           format:"rss",
           parser:"StackOverflow"
         }
