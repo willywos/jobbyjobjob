@@ -7,6 +7,10 @@ font-family: 'Source Sans Pro', sans-serif;
   font-weight: 500;
 }
 
+section {
+  min-height: 80vh;
+}
+
 .card-img-top {
   overflow: hidden;
   border-radius: 0.2em;
