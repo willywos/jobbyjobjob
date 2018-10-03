@@ -6,7 +6,9 @@ class StackOverflowParser < JobParser
   end
 
   def process(data)
+
     data.map! { |item|
+
       {
         title: get_title(item.title),
         description: sanitize_html(item.summary),
@@ -20,10 +22,11 @@ class StackOverflowParser < JobParser
   end
 
   def get_title(title)
-    title.split(" at").first()
+    title.split(" at").first().gsub("(Remote)", "")
   end
 
   def get_company_from_title(title)
-    title[/at (.*) \(/, 1]
+    str_arr = title.split(' at ', 2)
+    str_arr[1].split(' (')[0]
   end
 end

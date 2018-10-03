@@ -31,6 +31,14 @@ class JobPosting < ApplicationRecord
                   },
                   :order_within_rank => "job_postings.publish_date DESC"
 
+  pg_search_scope :find_matching_by_title,
+                  :against => :title,
+                  :using => {
+                    :tsearch => { dictionary: 'english', :normalization => 4}
+                  },
+
+                  :order_within_rank => "job_postings.publish_date DESC"
+
 
   def self.search_sort_by_pub_date(searchTerm)
     results = JobPosting.search_by_title(searchTerm)

@@ -3,6 +3,7 @@ require_relative 'github_job_parser'
 require_relative 'we_work_remotely_parser'
 require_relative 'indeed_parser'
 require_relative 'stack_overflow_parser'
+require 'similar_text'
 
 module JobbyJobJob
   class Parser
@@ -33,13 +34,19 @@ module JobbyJobJob
       @job_site[:format] == "json" ? parse_json : parse_rss
     end
 
+    def is_already_posted?(job)
+      found = false
+      job_postings = JobPosting.find_matching_by_title(job[:title].gsub(/[^\w\s\d]/, ' ').split.join(" ")).where(company:job[:company])
+      job_postings.each do |posting|
+        found = true if posting.title.similar(job[:title]) > 80.0
+      end
+      found
+    end
+
     def process_mapping!
       @parser.process(parse_body).each do |job|
         unless job.blank?
-          job_posting = JobPosting.where(company: job[:company], title: job[:title]).first
-          if job_posting.blank?
-            JobPosting.create!(job)
-          end
+          JobPosting.create!(job) if !is_already_posted?(job)
         end
       end
     end
