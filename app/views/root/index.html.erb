@@ -1,9 +1,12 @@
 <div class="container">
   <div class="page-header">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-10">
-            <div class="py-5">
-              <h1 class="text-center my-4">Search for remote programming jobs across multiple job boards!</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <%= image_tag('hero.png', class:'img-rounded img-fluid') %>
+      </div>
+      <div class="col-md-6">
+        <h1 class="text-center my-4">Search for remote programming jobs across multiple job boards!</h1>
+              
               <%= form_with url: search_path, id:'searchForm', class:'card card-sm' do |form| %>
                   <div class="card-body row no-gutters align-items-center">
                       <div class="col-auto">
@@ -20,49 +23,52 @@
                       <!--end of col-->
                   </div>
               <% end %>
-            </div>
-            
-            <%= image_tag('companies.png', class:'img-fluid') %>
-            <hr>
+              <hr>
+
             <span><strong>Filter by tags:  </strong></span>
+            <br>
             <span class="badge badge-light">
-            <a href="javascript:populateSearch('node')">Node</a>
-          </span>
-          <span class="badge badge-light">
-            <a href="javascript:populateSearch('javascript')">JavaScript</a>
-          </span>
-          <span class="badge badge-light">
-            <a href="javascript:populateSearch('react')">React</a>
-          </span>
-          <span class="badge badge-light">
-            <a href="javascript:populateSearch('java')">Java</a>
-          </span>
-          <span class="badge badge-light">
-            <a href="javascript:populateSearch('ruby')">Ruby</a>
-          </span>
-          <span class="badge badge-light">
-            <a href="javascript:populateSearch('rails')">Rails</a>
-          </span>
-          <span class="badge badge-light">
-            <a href="javascript:populateSearch('go')">Go</a>
-          </span>
-          <span class="badge badge-light">
-            <a href="javascript:populateSearch('sql')">SQL</a>
-          </span>
-          <span class="badge badge-light">
-            <a href="javascript:populateSearch('devops')">DevOps</a>
-          </span>
-          <span class="badge badge-light">
-            <a href="javascript:populateSearch('full stack')">Full Stack</a>
-          </span>
-          <span class="badge badge-light">
-            <a href="javascript:populateSearch('front end')">Front End</a>
-          </span>
+              <a href="javascript:populateSearch('node')">Node</a>
+            </span>
+            <span class="badge badge-light">
+              <a href="javascript:populateSearch('javascript')">JavaScript</a>
+            </span>
+            <span class="badge badge-light">
+              <a href="javascript:populateSearch('react')">React</a>
+            </span>
+            <span class="badge badge-light">
+              <a href="javascript:populateSearch('java')">Java</a>
+            </span>
+            <span class="badge badge-light">
+              <a href="javascript:populateSearch('ruby')">Ruby</a>
+            </span>
+            <span class="badge badge-light">
+              <a href="javascript:populateSearch('rails')">Rails</a>
+            </span>
+            <span class="badge badge-light">
+              <a href="javascript:populateSearch('go')">Go</a>
+            </span>
+            <span class="badge badge-light">
+              <a href="javascript:populateSearch('sql')">SQL</a>
+            </span>
+            <span class="badge badge-light">
+              <a href="javascript:populateSearch('devops')">DevOps</a>
+            </span>
+            <span class="badge badge-light">
+              <a href="javascript:populateSearch('full stack')">Full Stack</a>
+            </span>
+            <span class="badge badge-light">
+              <a href="javascript:populateSearch('front end')">Front End</a>
+            </span>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-10">
+            <%= image_tag('companies.png', class:'img-fluid') %>           
           <hr>
           <%= render partial:"root/job_postings", locals: { job_postings: @job_postings } %>
         </div>
         <!--end of col-->
-        
     </div>
   </div>
 </div>

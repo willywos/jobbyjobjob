@@ -1,5 +1,29 @@
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+#auth-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-default {
+  background-color: #83ff00 !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ff008e !important;
+  font-weight: bold;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: #ff008e !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ff008e !important;
+}
 
 body {
 font-family: 'Source Sans Pro', sans-serif;
@@ -9,6 +33,15 @@ font-family: 'Source Sans Pro', sans-serif;
 
 section {
   min-height: 80vh;
+}
+
+a {
+  color: #d60cb1 !important;
+}
+
+
+.bg-green {
+  background-color: #83ff00 !important;
 }
 
 .card-img-top {
@@ -45,4 +78,40 @@ section {
     border: none;
     outline: none;
     box-shadow: none;
+}
+
+
+li.history-item {
+  padding: 8px 0;
+}
+
+.flash-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flash {
+  width: 50%;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flash.notice {
+  background-color: #83ff00;
+  color: red;
+}
+
+.flash.alert {
+  background-color: red;
+  color: white;
+}
+
+.save-job-action {
+  margin-top: 10px;
 }

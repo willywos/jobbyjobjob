@@ -1,5 +1,6 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white mb-4">
+<nav class="navbar navbar-expand-lg navbar-light bg-green mb-4">
+
   <div class="container">
     <%= link_to root_path, class:"navbar-brand" do %> 
     <%= image_tag('logo.png', class:'img-responsive') %>
@@ -14,7 +15,14 @@
       <li><%= link_to 'Home', root_path, class: 'nav-link' %></li>
       <li><%= link_to 'About', about_path, class: 'nav-link' %></li>
       <li><a class="nav-link" href="mailto:wwilimek@gmail.com">Contact</a></li>
+      <% if current_user %>
+        <li><%= link_to 'My Jobs', my_jobs_path , class: 'nav-link' %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete , class: 'nav-link' %></li>
+      <% else %>
+          <li><%= link_to 'Login', new_user_session_path, class: 'nav-link'  %></li>
+      <% end %>
     </ul>
+
   </div>
   </div>
   
