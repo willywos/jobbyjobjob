@@ -1,81 +1,67 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-8">
-      <div class="page-header">
-        <%= image_tag('hero.png', class:'img-rounded img-responsive') %>
-        <h4>Search for remote programming jobs across multiple job boards!</h4>
-        <%= image_tag('companies.png', class:'img-responsive') %>
-        <br>
-      </div>
-      <%= render partial:"root/job_postings", locals: { job_postings: @job_postings } %>
-    </div>
-    <div class="col-md-4">
-      <div class="card ">
-        <h5 class="card-header">Search</h5>
-        <div class="card-body">
-
-            <%= form_with url: search_path, id:'searchForm', class:'form-inline' do |form| %>
-              <div class='form-group'>
-                <div class="input-group">
-                  <%= form.text_field :query, class:'form-control', placeholder:'Search for...' %>
-                </div>
-              </div>
-                <%= form.submit "Go!", class:"btn btn-primary" %>
+  <div class="page-header">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-10">
+            <div class="py-5">
+              <h1 class="text-center my-4">Search for remote programming jobs across multiple job boards!</h1>
+              <%= form_with url: search_path, id:'searchForm', class:'card card-sm' do |form| %>
+                  <div class="card-body row no-gutters align-items-center">
+                      <div class="col-auto">
+                          <i class="fas fa-search h4 text-body"></i>
+                      </div>
+                      <!--end of col-->
+                      <div class="col">
+                          <%= form.text_field :query, class:'form-control form-control-lg form-control-borderless', placeholder: 'Search for...', type: "search", placeholder: "Search topics or keywords" %>
+                      </div>
+                      <!--end of col-->
+                      <div class="col-auto">
+                          <button class="btn btn-lg btn-success" type="submit">Search</button>
+                      </div>
+                      <!--end of col-->
+                  </div>
               <% end %>
-          </div>
-      </div>
-      <div class="card ">
-        <h5 class="card-header">Quick Search</h5>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-lg-6">
-              <ul class="list-unstyled mb-0">
-                <li>
-                  <a href="javascript:populateSearch('node')">Node</a>
-                </li>
-                <li>
-                  <a href="javascript:populateSearch('javascript')">JavaScript</a>
-                </li>
-                <li>
-                  <a href="javascript:populateSearch('react')">React</a>
-                </li>
-                <li>
-                  <a href="javascript:populateSearch('java')">Java</a>
-                </li>
-                <li>
-                  <a href="javascript:populateSearch('ruby')">Ruby</a>
-                </li>
-                <li>
-                  <a href="javascript:populateSearch('rails')">Rails</a>
-                </li>
-                <li>
-                  <a href="javascript:populateSearch('go')">Go</a>
-                </li>
-                <li>
-                  <a href="javascript:populateSearch('sql')">SQL</a>
-                </li>
-                <li>
-                  <a href="javascript:populateSearch('devops')">DevOps</a>
-                </li>
-                <li>
-                  <a href="javascript:populateSearch('full stack')">Full Stack</a>
-                </li>
-                <li>
-                  <a href="javascript:populateSearch('front end')">Front End</a>
-                </li>
-              </ul>
             </div>
-          </div>
+            
+            <%= image_tag('companies.png', class:'img-fluid') %>
+            <hr>
+            <span class="badge badge-light">
+            <a href="javascript:populateSearch('node')">Node</a>
+          </span>
+          <span class="badge badge-light">
+            <a href="javascript:populateSearch('javascript')">JavaScript</a>
+          </span>
+          <span class="badge badge-light">
+            <a href="javascript:populateSearch('react')">React</a>
+          </span>
+          <span class="badge badge-light">
+            <a href="javascript:populateSearch('java')">Java</a>
+          </span>
+          <span class="badge badge-light">
+            <a href="javascript:populateSearch('ruby')">Ruby</a>
+          </span>
+          <span class="badge badge-light">
+            <a href="javascript:populateSearch('rails')">Rails</a>
+          </span>
+          <span class="badge badge-light">
+            <a href="javascript:populateSearch('go')">Go</a>
+          </span>
+          <span class="badge badge-light">
+            <a href="javascript:populateSearch('sql')">SQL</a>
+          </span>
+          <span class="badge badge-light">
+            <a href="javascript:populateSearch('devops')">DevOps</a>
+          </span>
+          <span class="badge badge-light">
+            <a href="javascript:populateSearch('full stack')">Full Stack</a>
+          </span>
+          <span class="badge badge-light">
+            <a href="javascript:populateSearch('front end')">Front End</a>
+          </span>
+          <hr>
+          <%= render partial:"root/job_postings", locals: { job_postings: @job_postings } %>
         </div>
-        <div class="card ">
-          <h5 class="card-header">Jobby Job Job Status</h5>
-          <div class="card-body">
-            <strong>Last Refresh:</strong> <br>
-            <%= local_time(JobPosting.last.created_at, format: '%B %e, %Y %l:%M%P') %>
-            <br><br>
-            <strong>Total Number Of Jobs:</strong><br> <%= JobPosting.all.count %>
-          </div>
-        </div>
-      </div>
+        <!--end of col-->
+        
     </div>
   </div>
+</div>

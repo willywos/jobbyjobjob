@@ -7,29 +7,6 @@ font-family: 'Source Sans Pro', sans-serif;
   font-weight: 500;
 }
 
-.navbar-default {
-  background-color: #83ff00 !important;
-}
-
-.navbar-default .navbar-nav > li > a {
-  color: #ff008e !important;
-  font-weight: bold;
-}
-
-.navbar-default .navbar-toggle {
-  border-color: #ff008e !important;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-  background-color: #ff008e !important;
-}
-
-.btn-primary {
-  background-color: #00d9ff !important;
-  border-color: #ababab !important;
-}
-
-
 .card-img-top {
   overflow: hidden;
   border-radius: 0.2em;
@@ -49,4 +26,19 @@ font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   float: left;
   padding-top: 10px;
+}
+
+
+.badge {
+  padding: 10px;
+}
+
+.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
 }

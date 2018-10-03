@@ -1,17 +1,10 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<nav class="navbar navbar-expand-lg navbar-light bg-white mb-4">
   <div class="container">
     <%= link_to root_path, class:"navbar-brand" do %> 
     <%= image_tag('logo.png', class:'img-responsive') %>
   <% end %>
-  <%= form_with url: search_path, id:'searchForm', class:'form-inline' do |form| %>
-    <div class='form-group'>
-      <div class="input-group">
-        <%= form.text_field :query, class:'form-control', placeholder:'Search for...' %>
-      </div>
-    </div>
-    <%= form.submit "Go!", class:"btn btn-primary" %>
-   <% end %>
+  
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
