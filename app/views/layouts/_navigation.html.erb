@@ -13,12 +13,18 @@
         <%= image_tag('logo.png', class:'img-responsive') %>
       <% end %>
     </div>
-    <div class="collapse navbar-collapse" id='navigationbar'>
-      <ul class="nav navbar-nav">
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'About', about_path %></li>
-        <li><a class="nav-link" href="mailto:wwilimek@gmail.com">Contact</a></li>
-      </ul>
+     <div class="collapse navbar-collapse" id='navigationbar'>
+        <ul class="nav navbar-nav">
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'About', about_path %></li>
+          <li><a class="nav-link" href="mailto:wwilimek@gmail.com">Contact</a></li>
+          <% if current_user %>
+            <li><%= link_to 'My Jobs', my_jobs_path %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+          <% end %>
+        </ul>
     </div>
   </div>
 </nav>

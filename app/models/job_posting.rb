@@ -1,5 +1,24 @@
+# == Schema Information
+#
+# Table name: job_postings
+#
+#  id           :bigint(8)        not null, primary key
+#  title        :string
+#  description  :text
+#  publish_date :datetime
+#  company      :string
+#  url          :string
+#  logo         :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  job_board    :string
+#
+
 class JobPosting < ApplicationRecord
   include PgSearch
+  has_many :saved_jobs
+  has_many :users, through: :saved_jobs
+
   multisearchable :against => [:title, :company]
 
   pg_search_scope :search_by_title,
