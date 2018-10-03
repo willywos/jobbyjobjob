@@ -14,6 +14,12 @@ class RootController < ApplicationController
 
   def view_post
     @posting = JobPosting.find(params[:id])
+    history_item = {id: @posting.id, title: @posting.title}
+    session[:viewed_post_history] ||= []
+    # preventing duplicates; todo: might be good to move duplicate to the front instead of just ignoring?
+    unless session[:viewed_post_history].any? {|h| h["id"] == @posting.id}
+      session[:viewed_post_history].unshift(history_item)
+    end
   end
 
   def save_job
