@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Clean Up
+DatabaseCleaner.clean_with :truncation
+puts 'Truncated Dev Database...'
+
+# Create Test User
+test_user = User.create!(email: 'user@test.com', password: 'password')
+puts 'Test User Created!'
+
+# Seed Jobs
+Rake::Task['jobby_job:process_job_sites'].execute
+
+# User / Job Association
+SavedJob.create!(user_id: test_user.id, job_posting_id: JobPosting.first.id)
+
+puts 'Seeded Successfully!'
