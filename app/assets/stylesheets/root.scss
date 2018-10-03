@@ -1,6 +1,11 @@
-// Place all the styles related to the root controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+
+body {
+font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
 
 .navbar-default {
   background-color: #83ff00 !important;
@@ -17,10 +22,6 @@
 
 .navbar-default .navbar-toggle .icon-bar {
   background-color: #ff008e !important;
-}
-
-a {
-  color: #d60cb1 !important;
 }
 
 .btn-primary {
