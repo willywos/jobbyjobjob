@@ -67,7 +67,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem "font-awesome-rails"
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'local_time'
 gem 'feedjira'
