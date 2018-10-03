@@ -1,0 +1,11 @@
+<div class='container'>
+  <h1>My Jobs</h1>
+  <hr />
+  <% if @my_jobs.any? %>
+    <%= render partial:"root/job_postings", locals: { job_postings: @my_jobs } %>
+    <%= will_paginate @my_jobs %>
+  <% else %>
+    <h3>No jobs yet, why don't you try getting a job or something?</h3>
+    <%= link_to 'Get A Job', root_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>
