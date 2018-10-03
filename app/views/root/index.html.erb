@@ -7,7 +7,9 @@
         <%= image_tag('companies.png', class:'img-responsive') %>
         <br>
       </div>
+      <%= will_paginate @job_postings %>
       <%= render partial:"root/job_postings", locals: { job_postings: @job_postings } %>
+      <%= will_paginate @job_postings %>
     </div>
     <div class="col-md-4">
       <div class="card ">
