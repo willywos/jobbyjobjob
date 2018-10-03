@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#auth-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .navbar-default {
   background-color: #83ff00 !important;
 }
@@ -28,7 +36,6 @@ a {
   border-color: #ababab !important;
 }
 
-
 .card-img-top {
   overflow: hidden;
   border-radius: 0.2em;
@@ -48,4 +55,34 @@ a {
   text-align: center;
   float: left;
   padding-top: 10px;
+}
+.flash-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flash {
+  width: 50%;
+  height: 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flash.notice {
+  background-color: #83ff00;
+  color: red;
+}
+
+.flash.alert {
+  background-color: red;
+  color: white;
+}
+
+.save-job-action {
+  margin-top: 10px;
 }
