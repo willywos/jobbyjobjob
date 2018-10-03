@@ -1,6 +1,7 @@
 # Jobby Job Job
 
-Heroku takes 30 seconds to load the instance. After that it's really very fast.
+Heroku takes 30 seconds to load the instance. After that, it's really very fast.
+
 
 [https://jobbyjobjob.herokuapp.com/](https://jobbyjobjob.herokuapp.com/)
 
