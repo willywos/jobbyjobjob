@@ -8,6 +8,7 @@ require 'similar_text'
 module JobbyJobJob
   class Parser
     attr_accessor :response, :parser, :job_site
+
     def initialize(res, job_site)
       @response = res
       @job_site = job_site
@@ -38,7 +39,7 @@ module JobbyJobJob
       found = false
       job_postings = JobPosting.find_matching_by_title(job[:title].gsub(/[^\w\s\d]/, ' ').split.join(" ")).where(company:job[:company])
       job_postings.each do |posting|
-        found = true if posting.title.similar(job[:title]) > 80.0
+        found = true if posting[:title].similar(job[:title]) > 80.0
       end
       found
     end
