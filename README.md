@@ -2,6 +2,7 @@
 
 Heroku takes 30 seconds to load the instance. After that, it's really very fast.
 
+
 [https://jobbyjobjob.herokuapp.com/](https://jobbyjobjob.herokuapp.com/)
 
 ## Description
@@ -43,8 +44,14 @@ $ cd jobbyjobjob
 $ bundle install
 $ rake db:create (postgres database)
 $ rake db:migrate
-$ rake jobby_job:process_job_sites
+$ rake db:seed
 $ rails s
+```
+
+## Grabbing Jobs
+
+```
+$ rake jobby_job:process_job_sites
 ```
 
 ## Submitting Pull Requests
