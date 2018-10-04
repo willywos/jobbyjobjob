@@ -91,3 +91,23 @@ li.history-item {
 .save-job-action {
   margin-top: 10px;
 }
+
+.post-card {
+  flex: 1 1 50%;
+  position: relative;
+  border: 1px solid #efefef;
+}
+.post-card-content {
+  padding: 30px 30px 50px;
+  line-height: 1.6;
+  color: #666666;
+}
+
+.post-card-details {
+  position: relative;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 0 0 30px;
+  margin-left: 40%;
+}
