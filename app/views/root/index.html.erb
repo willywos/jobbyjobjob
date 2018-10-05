@@ -7,16 +7,20 @@
         <%= image_tag('companies.png', class:'img-responsive') %>
         <br>
       </div>
-      <%= will_paginate @job_postings %>
+      <div class="job_pagination add_remote">
+        <%= will_paginate @job_postings, params: {query: params[:query]} %>
+      </div>
       <%= render partial:"root/job_postings", locals: { job_postings: @job_postings } %>
-      <%= will_paginate @job_postings %>
+      <div class="job_pagination add_remote">
+        <%= will_paginate @job_postings, params: {query: params[:query]} %>
+      </div>
     </div>
     <div class="col-md-4">
       <div class="card ">
         <h5 class="card-header">Search</h5>
         <div class="card-body">
 
-            <%= form_with url: search_path, id:'searchForm', class:'form-inline' do |form| %>
+            <%= form_with url: root_path, id:'searchForm', class:'form-inline', method: :get do |form| %>
               <div class='form-group'>
                 <div class="input-group">
                   <%= form.text_field :query, class:'form-control', placeholder:'Search for...' %>
