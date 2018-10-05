@@ -15,11 +15,17 @@
               <div class="pull-right"><%= link_to 'Back', root_path, class:'btn btn-primary' %></div>
               <h4 class="media-heading"><%= link_to @posting.title, @posting.url, target:"_blank" %> <br><small><%= @posting.company %> | <%= local_time(@posting.publish_date, '%B %e, %Y') %></small></h4>
               <hr>
-              <span style="white-space: pre-line;">
-              <%= auto_link(@posting.description, :html => { :target => '_blank' }) %>
-              </span>
-              <div class="center">
-                <%= link_to 'View Original Job Post', @posting.url, target:"_blank", class:'btn btn-primary' %>
+              <div class="post-card">
+                <div class="post-card-content">
+                  <span style="white-space: pre-line;">
+                  <%= auto_link(@posting.description, :html => { :target => '_blank' }) %>
+                  </span>
+                </div>
+                <div class="post-card-details">
+                  <div class="center">
+                    <%= link_to 'View Original Job Post', @posting.url, target:"_blank", class:'btn btn-primary' %>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
