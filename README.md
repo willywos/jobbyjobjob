@@ -7,14 +7,14 @@ Heroku takes 30 seconds to load the instance. After that, it's really very fast.
 
 ## Description
 
-Jobby Job Job is a website that aggregates job postings from 4 different job boards.
+Jobby Job Job is a website that aggregates job postings from four different job boards.
 The job boards are remote only jobs. You can specify and search for different jobs.
 You can also view the original post.
 
 Job posts are updated every hour using the Heroku scheduler to execute a rake
 background task. The rake task builds the posts and creates the search indexes.
 
-## Screenshot Time.
+## Screenshot Time
 
 ![Screenshot](public/img/screenshot.png)
 
@@ -27,9 +27,7 @@ background task. The rake task builds the posts and creates the search indexes.
 
 ## Contributing
 
-If you want to help me with this project by adding a feature, another job board
-or fixing a bug please just submit a pull request. I will probably accept it.
-If you don't then I hate you.
+If you want to help me with this project, please just submit a pull request to fix a bug or add a feature, like another job board. I will probably accept it. If you don't, then I hate you.
 
 This is a good project to work on if you want to do [Hacktoberfest](https://hacktoberfest.digitalocean.com/) #Hacktoberfest. Check out this [issue](https://github.com/willywos/jobbyjobjob/issues/1) for some ideas or feel free to add to the list.
 
