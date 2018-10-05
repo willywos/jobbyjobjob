@@ -8,10 +8,6 @@ class RootController < ApplicationController
   def about
   end
 
-  def search
-    load_jobs
-  end
-
   def view_post
     @posting = JobPosting.find(params[:id])
     history_item = {id: @posting.id, title: @posting.title}
