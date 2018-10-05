@@ -3,11 +3,11 @@
 Heroku takes 30 seconds to load the instance. After that, it's really very fast.
 
 
-[https://jobbyjobjob.herokuapp.com/](https://jobbyjobjob.herokuapp.com/)
+[http://jobbyjobjob.net/](http://jobbyjobjob.net/)
 
 ## Description
 
-Jobby Job Job is a website that aggregates job postings from four different job boards.
+Jobby Job Job is a website that aggregates job postings from five different job boards.
 The job boards are remote only jobs. You can specify and search for different jobs.
 You can also view the original post.
 
@@ -24,6 +24,7 @@ background task. The rake task builds the posts and creates the search indexes.
 - [https://jobs.github.com](https://jobs.github.com)
 - [https://weworkremotely.com/](https://weworkremotely.com/)
 - [https://remoteok.io/](https://remoteok.io/)
+- [https://stackoverflow.com/jobs/](https://stackoverflow.com/jobs/)
 
 ## Contributing
 
