@@ -34,11 +34,12 @@ This is a good project to work on if you want to do [Hacktoberfest](https://hack
 
 Thanks goes to of these wonderful people, who allready contributed to the project: 
 
-<!-- ALL-CONTRIBUTORS-LIST:START -->
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
 | [<img src="https://avatars1.githubusercontent.com/u/101503?s=400&v=4" width="140px;"/><br /><sub><b>Will Wilimek</b></sub>](http://willywos.github.io)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=willywos "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/801470?s=400&v=4" width="140px;"/><br /><sub><b>Jake Sorce</b></sub>](https://github.com/jakesorce)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=jakesorce "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/5741299?s=460&v=4" width="140px;"/><br /><sub><b>RJ Beers</b></sub>](http://beneb.info)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=r33beers "Documentation") | 
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-[<img src="https://avatars3.githubusercontent.com/u/31360746?s=400&v=4" width="140px;"/><br /><sub><b>Tripph</b></sub>](https://github.com/tripph)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=tripph "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/839766?s=460&v=4" width="140px;"/><br /><sub><b>Cristian R. Silva</b></sub>](https://github.com/jfmengels)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=ocristian  "Documentation")| [<img src="https://avatars2.githubusercontent.com/u/2006403?s=460&v=4" width="140px;"/><br /><sub><b>Ivan Granados</b></sub>](https://github.com/chivoX)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=chivoX "Documentation") 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+| :---: | :---: | :---: |
+| [<img src="https://avatars3.githubusercontent.com/u/31360746?s=400&v=4" width="140px;"/><br /><sub><b>Tripph</b></sub>](https://github.com/tripph)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=tripph "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/839766?s=460&v=4" width="140px;"/><br /><sub><b>Cristian R. Silva</b></sub>](https://github.com/jfmengels)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=ocristian  "Documentation")| [<img src="https://avatars2.githubusercontent.com/u/2006403?s=460&v=4" width="140px;"/><br /><sub><b>Ivan Granados</b></sub>](https://github.com/chivoX)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=chivoX "Documentation") | <!-- ALL-CONTRIBUTORS-LIST:END -->
+
 (By clicking on 📖 you can see individual contributions)
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. 
