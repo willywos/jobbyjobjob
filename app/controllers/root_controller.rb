@@ -2,14 +2,14 @@ class RootController < ApplicationController
   before_action :authenticate_user!, only: [:save_job]
 
   def index
-    @job_postings = JobPosting.paginate(page: params[:page]).order("publish_date desc")
+    load_jobs
   end
 
   def about
   end
 
   def search
-    @job_postings = params[:query].blank? ? JobPosting.paginate(page: params[:page]).order("publish_date desc") : JobPosting.search_sort_by_pub_date(params[:query])
+    load_jobs
   end
 
   def view_post
@@ -39,5 +39,15 @@ class RootController < ApplicationController
     flash[:notice] = "Job Was Successfully Removed!"
 
     redirect_back(fallback_location: root_path)
+  end
+
+  private
+
+  def load_jobs
+    @job_postings = if params[:query].blank? 
+      JobPosting.paginate(page: params[:page]).order("publish_date desc") 
+    else 
+      JobPosting.search_by_title(params[:query]).paginate(page: params[:page]).reorder("publish_date desc")
+    end
   end
 end
