@@ -15,10 +15,6 @@ ActiveRecord::Schema.define(version: 2018_10_02_032354) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "foods", id: false, force: :cascade do |t|
-    t.text "name"
-  end
-
   create_table "job_postings", force: :cascade do |t|
     t.string "title"
     t.text "description"
