@@ -2,7 +2,6 @@
 
 Heroku takes 30 seconds to load the instance. After that, it's really very fast.
 
-
 [http://jobbyjobjob.net/](http://jobbyjobjob.net/)
 
 ## Description
@@ -32,7 +31,7 @@ If you want to help me with this project, please just submit a pull request to f
 
 This is a good project to work on if you want to do [Hacktoberfest](https://hacktoberfest.digitalocean.com/) #Hacktoberfest. Check out this [issue](https://github.com/willywos/jobbyjobjob/issues/1) for some ideas or feel free to add to the list.
 
-Thanks goes to of these wonderful people, who allready contributed to the project:
+Thanks goes to all of these wonderful people, who already contributed to the project:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
