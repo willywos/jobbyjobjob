@@ -20,14 +20,14 @@ default: &default
   pool: 100
   username: postgres
   password: test
+  username: <%= (ENV["DB_USERNAME"] || 'postgres') %>
+  password: <%= (ENV["DB_PASSWORD"] || 'test') %>
+  host: <%= (ENV["DB_HOST"] || 'localhost') %>
   allow_concurrency: true
 
 development:
   <<: *default
   database: <%= (ENV["DB_DATABASE"] || 'jobbyjobjob_development') %>
-  username: <%= (ENV["DB_USERNAME"] || 'postgres') %>
-  password: <%= (ENV["DB_PASSWORD"] || 'test') %>
-  host: <%= (ENV["DB_HOST"] || 'localhost') %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -62,9 +62,6 @@ development:
 test:
   <<: *default
   database: jobbyjobjob_test
-  username: postgres
-  password: test
-  host: localhost
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
