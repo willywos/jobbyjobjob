@@ -45,9 +45,12 @@ module JobbyJobJob
     end
 
     def process_mapping!
-      @parser.process(parse_body).each do |job|
-        unless job.blank?
-          JobPosting.create!(job) if !is_already_posted?(job)
+      parsed_data = parse_body
+      unless parsed_data.blank?
+        @parser.process(parsed_data).each do |job|
+          unless job.blank?
+            JobPosting.create!(job) if !is_already_posted?(job)
+          end
         end
       end
     end

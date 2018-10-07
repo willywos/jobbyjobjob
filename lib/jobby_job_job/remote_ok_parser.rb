@@ -16,6 +16,6 @@ class RemoteOkParser < JobParser
         logo: item["logo"],
         job_board: "RemoteOk"
       } if item["legal"].blank?
-    }
+    } unless data.blank?
   end
 end
