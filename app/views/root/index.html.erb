@@ -77,7 +77,11 @@
           <h5 class="card-header">Jobby Job Job Status</h5>
           <div class="card-body">
             <strong>Last Refresh:</strong> <br>
-            <%= local_time(JobPosting.last.created_at, format: '%B %e, %Y %l:%M%P') %>
+            <% if JobPosting.last %>
+                <%= local_time(JobPosting.last.created_at, format: '%B %e, %Y %l:%M%P') %>
+            <% else %>
+                <%= local_time(DateTime.now, format: '%B %e, %Y %l:%M%P') %>
+            <% end %>
             <br><br>
             <strong>Total Number Of Jobs:</strong><br> <%= JobPosting.all.count %>
             <% if session[:viewed_post_history] != nil && session[:viewed_post_history].length > 0 %>

@@ -39,6 +39,7 @@ class JobPosting < ApplicationRecord
 
                   :order_within_rank => "job_postings.publish_date DESC"
 
+  scope :unsaved, -> {where(:is_saved => false)}
 
   def self.search_sort_by_pub_date(searchTerm)
     results = JobPosting.search_by_title(searchTerm)
@@ -60,3 +61,4 @@ class JobPosting < ApplicationRecord
     "%06x" % (company_initials.sum * 0xcd3)
   end
 end
+
