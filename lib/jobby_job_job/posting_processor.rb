@@ -43,12 +43,15 @@ module JobbyJobJob
         parser = JobbyJobJob::Parser.new(res, job_site)
         parser.process_mapping!
       end
-      JobPosting.where('publish_date < ?', 1.month.ago).delete_all
+      # Delete all unsaved jobs published a month back
+      JobPosting.unsaved.where('publish_date < ?', 1.month.ago).delete_all
       PgSearch::Multisearch.rebuild(JobPosting)
     end
 
     def delete_all!
-      JobPosting.delete_all
+      # Delete all unsaved jobs
+      JobPosting.unsaved.delete_all
     end
   end
 end
+
