@@ -12,24 +12,29 @@ RSpec.describe JobbyJobJob::Parser do
       parser:"StackOverflow"
     }
     @parser = JobbyJobJob::Parser.new(@res, @job_site)
-    @job_postings = [
-      { title: "Senior Data Scientist", company:"Test" },
-      { title: "Sr. Cron Job Runner", company:"Test" },
-    ]
   end
 
   describe '#is_already_posted?' do
-    before(:each) do
-      allow(JobPosting).to receive_message_chain(:find_matching_by_title, :where).and_return(@job_postings)
+
+    it 'returns true when the job posting is found by url' do
+      allow(@parser).to receive(:find_job_posting_by_url).and_return(true)
+      allow(@parser).to receive(:find_job_posting_by_title).and_return(false)
+      expect(@parser.is_already_posted?(
+        { :title => "Cds", company:"Test", url:"http://test.com/1234" }
+      )).to eq(true)
     end
 
-    it 'returns true when the job posting is already added' do
+    it 'returns true when the job posting is found by title' do
+      allow(@parser).to receive(:find_job_posting_by_url).and_return(false)
+      allow(@parser).to receive(:find_job_posting_by_title).and_return(true)
       expect(@parser.is_already_posted?(
-        { :title => "Senior Scientist", company:"Test" }
+        { :title => "Cds", company:"Test", url:"http://test.com/1234" }
       )).to eq(true)
     end
 
     it 'returns false when no matching job is found' do
+      allow(@parser).to receive(:find_job_posting_by_url).and_return(false)
+      allow(@parser).to receive(:find_job_posting_by_title).and_return(false)
       expect(@parser.is_already_posted?(
         { :title => "Cow Pusher", company:"Test" }
       )).to eq(false)
