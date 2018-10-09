@@ -17,8 +17,20 @@
 require 'rails_helper'
 
 RSpec.describe JobPosting, type: :model do
-  it "should get the initials from the company name" do
-    @posting = JobPosting.new({ company:"All Night And LATE" })
-    expect(@posting.company_initials).to eq("ANAL")
+
+  describe "#company_initials" do
+    it "should get the initials from the company name" do
+      @posting = JobPosting.new({ company:"All Night And LATE" })
+      expect(@posting.company_initials).to eq("ANAL")
+    end
+  end
+
+  describe "#description_formatted_for_post" do
+    it "should remove duplicate <br><br> tags from the job posting" do
+      html = "<ul><br><br><li>Write some Ruby!</li></ul>"
+      formatted_description = "<ul><li>Write some Ruby!</li></ul>"
+      @posting = JobPosting.new({description: html})
+      expect(@posting.description_formatted_for_post).to eq(formatted_description)
+    end
   end
 end

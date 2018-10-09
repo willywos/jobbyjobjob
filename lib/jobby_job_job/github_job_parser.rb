@@ -7,7 +7,7 @@ class GithubJobParser < JobParser
     data.map! { |item|
       {
         title: item["title"],
-        description: sanitize_html(item["description"]),
+        description: item["description"],
         publish_date: item["created_at"],
         company: item["company"],
         url: item["url"],

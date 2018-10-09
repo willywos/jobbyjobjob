@@ -9,7 +9,7 @@ class RemoteOkParser < JobParser
     data.map! { |item|
       {
         title: item["position"],
-        description: sanitize_html(item["description"]),
+        description: item["description"],
         publish_date: Time.at(item["epoch"].to_i).to_datetime.to_s,
         company: item["company"],
         url: item["url"],

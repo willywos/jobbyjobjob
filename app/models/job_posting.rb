@@ -60,5 +60,14 @@ class JobPosting < ApplicationRecord
   def random_color
     "%06x" % (company_initials.sum * 0xcd3)
   end
-end
 
+  def description_formatted
+    ActionView::Base.full_sanitizer.sanitize(self.description, :tags => %w(img br p), :attributes => %w(src style))
+  end
+
+  def description_formatted_for_post
+    #removes duplicate <br><br> and <p><p> tags that are grouped together.
+    self.description.gsub(/(<br>){2,}/, "")
+                    .gsub(/(<p>){2,}/, "")
+  end
+end

@@ -10,13 +10,13 @@
       </div>
       <div class="media-body">
         <h4 class="media-heading">
-          <%= link_to posting.title, view_post_path(posting), target:"_blank" %>
+          <%= link_to posting.title, view_post_path(posting) %>
           <br>
           <small>
             <%= posting.company %> | <%= local_time(posting.publish_date, '%B %e, %Y') %> | <%= link_to "View Post On #{posting.job_board}", posting.url, target:"_blank" %>
           </small>
         </h4>
-        <%= truncate(posting.description, length: 300) %>
+        <%= truncate(posting.description_formatted, length: 300) %>
         <div class='save-job-action'>
           <% if current_user && current_user.job_postings.include?(posting) %>
             <%= form_tag("/remove_job/#{posting.id}") do -%>
