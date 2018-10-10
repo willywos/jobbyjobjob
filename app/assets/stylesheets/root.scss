@@ -36,6 +36,10 @@ a {
   border-color: #ababab !important;
 }
 
+div.card-img-top {
+  height: 3em;
+}
+
 .card-img-top {
   overflow: hidden;
   border-radius: 0.2em;
@@ -43,7 +47,6 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   width: 3em;
-  height: 3em;
   margin: 0;
   margin-right: 0.2em;
   display: inline-block;
