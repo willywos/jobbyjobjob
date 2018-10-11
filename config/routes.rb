@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   post '/remove_job/:id', to: 'root#remove_job'
   post '/search', to:"root#search", as:"search"
   get '/post/:id', to:"root#view_post", as:"view_post"
+
+  resources :resumes
 end
