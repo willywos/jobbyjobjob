@@ -1,0 +1,17 @@
+<tr id="resume_<%= resume.id %>">
+  <td>
+    <%= resume.name %>
+  </td>
+  <td>
+    <%= resume.created_at %>
+  </td>
+  <td>
+    <%= link_to edit_resume_path(resume) do %>
+      <i class="glyphicon glyphicon-edit"></i>
+    <% end %>
+
+    <%= link_to resume_path(resume), method: :delete, remote: true, data: {confirm: "Are you sure you want to delete?"}, class: "padding-left-5" do %>
+      <i class="glyphicon glyphicon-trash"></i>
+    <% end %>
+  </td>
+</tr>

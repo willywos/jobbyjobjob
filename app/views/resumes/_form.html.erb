@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="col-xs-12">
+    <%= form_for @resume do |f| %>
+      <%= f.hidden_field :user_id %>
+      <%= f.label :name, "Resume Name" %>
+      <%= f.text_field :name, limit: 255, class: "form-control" %>
+
+      <hr/>
+
+      <%= f.fields_for "data" do |ff| %>
+        <% Resume::DEFAULT_DATA_TEMPLATE[:basics].each do |key, value| %>
+          <% if value.class == String %>
+            <%= ff.label key %>
+            <%= ff.text_field key, value: check_value(@resume.data, [key]), class: "form-control" %>
+          <% end %>
+          <br/>
+        <% end %>
+      <% end %>
+      <%= f.submit :save, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

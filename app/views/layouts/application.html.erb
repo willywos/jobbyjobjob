@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="<%= params[:controller] %>">
     <%= render "layouts/navigation" %>
     <%= render 'layouts/flash' %>
     <%= yield %>

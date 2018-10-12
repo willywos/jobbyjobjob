@@ -1,0 +1,3 @@
+<% if @resume.destroyed? %>
+  $("#resume_<%= @resume.id %>").remove();
+<% end %>
