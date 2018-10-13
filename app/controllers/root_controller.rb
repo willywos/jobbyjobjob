@@ -7,7 +7,7 @@ class RootController < ApplicationController
     respond_to do |format|
       format.html
       format.rss { render layout: false }
-      format.json { render json: @job_postings.to_json(only: feed_fields) }
+      format.json { render json: JSONAPI::Serializer.serialize(@job_postings, is_collection: true) }
     end
   end
 
@@ -25,7 +25,7 @@ class RootController < ApplicationController
           session[:viewed_post_history].unshift(history_item)
         end
       end
-      format.json { render json: @posting.to_json(only: feed_fields) }
+      format.json { render json: JSONAPI::Serializer.serialize(@posting) }
       format.rss { render layout: false }
     end
   end
@@ -57,9 +57,5 @@ class RootController < ApplicationController
     else 
       JobPosting.search_by_title(params[:query]).paginate(page: params[:page]).reorder("publish_date desc")
     end
-  end
-
-  def feed_fields
-    %i[title logo description publish_date company job_board url]
   end
 end
