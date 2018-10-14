@@ -6,6 +6,7 @@ class RootController < ApplicationController
 
     respond_to do |format|
       format.html
+      format.js
       format.rss { render layout: false }
       format.json { render json: JSONAPI::Serializer.serialize(@job_postings, is_collection: true) }
     end
