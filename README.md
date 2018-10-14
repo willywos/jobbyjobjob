@@ -25,23 +25,7 @@ background task. The rake task builds the posts and creates the search indexes.
 - [https://remoteok.io/](https://remoteok.io/)
 - [https://stackoverflow.com/jobs/](https://stackoverflow.com/jobs/)
 
-## Contributing
 
-If you want to help me with this project, please just submit a pull request to fix a bug or add a feature, like another job board. I will probably accept it. If you don't, then I hate you.
-
-This is a good project to work on if you want to do [Hacktoberfest](https://hacktoberfest.digitalocean.com/) #Hacktoberfest. Check out this [issue](https://github.com/willywos/jobbyjobjob/issues/1) for some ideas or feel free to add to the list.
-
-Thanks goes to all of these wonderful people, who already contributed to the project:
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-| [<img src="https://avatars1.githubusercontent.com/u/101503?s=400&v=4" width="140px;"/><br /><sub><b>Will Wilimek</b></sub>](http://willywos.github.io)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=willywos "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/801470?s=400&v=4" width="140px;"/><br /><sub><b>Jake Sorce</b></sub>](https://github.com/jakesorce)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=jakesorce "Documentation") | [<img src="https://avatars3.githubusercontent.com/u/5741299?s=460&v=4" width="140px;"/><br /><sub><b>RJ Beers</b></sub>](http://beneb.info)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=r33beers "Documentation") |
-| :---: | :---: | :---: |
-| [<img src="https://avatars3.githubusercontent.com/u/31360746?s=400&v=4" width="140px;"/><br /><sub><b>Tripph</b></sub>](https://github.com/tripph)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=tripph "Documentation") | [<img src="https://avatars0.githubusercontent.com/u/839766?s=460&v=4" width="140px;"/><br /><sub><b>Cristian R. Silva</b></sub>](https://github.com/jfmengels)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=ocristian  "Documentation")| [<img src="https://avatars2.githubusercontent.com/u/2006403?s=460&v=4" width="140px;"/><br /><sub><b>Ivan Granados</b></sub>](https://github.com/chivoX)<br />[📖](https://github.com/willywos/jobbyjobjob/commits?author=chivoX "Documentation") | <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-(By clicking on 📖 you can see individual contributions)
-
-This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification.
 
 
 ## Building the project
@@ -91,3 +75,31 @@ When finished, remember to run `docker-compose down`.
 6. If your change affects something in this README, please update it
 7. Commit and push your changes
 8. Submit a pull request
+
+## Contributing
+
+<!-- Contributors START
+willywos willywos https://github.com/willywos code
+jakesorce jakesorce https://github.com/jakesorce code
+OvidiuToma OvidiuToma https://github.com/OvidiuToma code
+r33beers r33beers https://github.com/r33beers code
+ConnorBach ConnorBach https://github.com/ConnorBach code
+inqii inqii https://github.com/inqii code
+ocristian ocristian https://github.com/ocristian code
+edmistond edmistond https://github.com/edmistond code
+chivoX chivoX https://github.com/chivoX code
+tripph tripph https://github.com/tripph code
+
+Contributors END -->
+<!-- Contributors table START -->
+| [<img src="https://avatars.githubusercontent.com/willywos?s=100" width="100" alt="willywos" /><br/><sub><b>willywos</b></sub>](https://github.com/willywos)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=willywos) | [<img src="https://avatars.githubusercontent.com/jakesorce?s=100" width="100" alt="jakesorce" /><br /><sub>jakesorce</sub>](https://github.com/jakesorce)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=jakesorce) | [<img src="https://avatars.githubusercontent.com/OvidiuToma?s=100" width="100" alt="OvidiuToma" /><br /><sub>OvidiuToma</sub>](https://github.com/OvidiuToma)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=OvidiuToma) | [<img src="https://avatars.githubusercontent.com/r33beers?s=100" width="100" alt="r33beers" /><br /><sub>r33beers</sub>](https://github.com/r33beers)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=r33beers) | [<img src="https://avatars.githubusercontent.com/ConnorBach?s=100" width="100" alt="ConnorBach" /><br /><sub>ConnorBach</sub>](https://github.com/ConnorBach)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=ConnorBach) | [<img src="https://avatars.githubusercontent.com/inqii?s=100" width="100" alt="inqii" /><br /><sub>inqii</sub>](https://github.com/inqii)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=inqii) | [<img src="https://avatars.githubusercontent.com/ocristian?s=100" width="100" alt="ocristian" /><br /><sub>ocristian</sub>](https://github.com/ocristian)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=ocristian) |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+
+| [<img src="https://avatars.githubusercontent.com/edmistond?s=100" width="100" alt="edmistond" /><br /><sub>edmistond</sub>](https://github.com/edmistond)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=edmistond) | [<img src="https://avatars.githubusercontent.com/chivoX?s=100" width="100" alt="chivoX" /><br /><sub>chivoX</sub>](https://github.com/chivoX)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=chivoX) | [<img src="https://avatars.githubusercontent.com/tripph?s=100" width="100" alt="tripph" /><br /><sub>tripph</sub>](https://github.com/tripph)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=tripph) | [<img src="https://avatars.githubusercontent.com/undefined?s=100" width="100" alt="" /><br /><sub></sub>](undefined)<br /> |
+| :---: | :---: | :---: | :---: |
+<!-- Contributors table END -->
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification.
+
+(By clicking on 📖 you can see individual contributions)
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification.
