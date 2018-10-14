@@ -26,8 +26,6 @@ background task. The rake task builds the posts and creates the search indexes.
 - [https://stackoverflow.com/jobs/](https://stackoverflow.com/jobs/)
 
 
-
-
 ## Building the project
 
 Ruby Version: ruby 2.5.1
@@ -77,10 +75,16 @@ When finished, remember to run `docker-compose down`.
 8. Submit a pull request
 
 ## Contributing
+If you want to help me with this project, please just submit a pull request to fix a bug or add a feature, like another job board. I will probably accept it. If you don't, then I hate you.
+
+This is a good project to work on if you want to do Hacktoberfest #Hacktoberfest. Check out this issue for some ideas or feel free to add to the list.
+
+Thanks goes to all of these wonderful people, who already contributed to the project:
+
 
 <!-- Contributors START
-willywos willywos https://github.com/willywos code
 jakesorce jakesorce https://github.com/jakesorce code
+jereinhardt jereinhardt https://github.com/jereinhardt code
 OvidiuToma OvidiuToma https://github.com/OvidiuToma code
 r33beers r33beers https://github.com/r33beers code
 ConnorBach ConnorBach https://github.com/ConnorBach code
@@ -92,14 +96,12 @@ tripph tripph https://github.com/tripph code
 
 Contributors END -->
 <!-- Contributors table START -->
-| [<img src="https://avatars.githubusercontent.com/willywos?s=100" width="100" alt="willywos" /><br/><sub><b>willywos</b></sub>](https://github.com/willywos)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=willywos) | [<img src="https://avatars.githubusercontent.com/jakesorce?s=100" width="100" alt="jakesorce" /><br /><sub>jakesorce</sub>](https://github.com/jakesorce)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=jakesorce) | [<img src="https://avatars.githubusercontent.com/OvidiuToma?s=100" width="100" alt="OvidiuToma" /><br /><sub>OvidiuToma</sub>](https://github.com/OvidiuToma)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=OvidiuToma) | [<img src="https://avatars.githubusercontent.com/r33beers?s=100" width="100" alt="r33beers" /><br /><sub>r33beers</sub>](https://github.com/r33beers)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=r33beers) | [<img src="https://avatars.githubusercontent.com/ConnorBach?s=100" width="100" alt="ConnorBach" /><br /><sub>ConnorBach</sub>](https://github.com/ConnorBach)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=ConnorBach) | [<img src="https://avatars.githubusercontent.com/inqii?s=100" width="100" alt="inqii" /><br /><sub>inqii</sub>](https://github.com/inqii)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=inqii) | [<img src="https://avatars.githubusercontent.com/ocristian?s=100" width="100" alt="ocristian" /><br /><sub>ocristian</sub>](https://github.com/ocristian)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=ocristian) |
+| [<img src="https://avatars.githubusercontent.com/willywos?s=100" width="100" alt="willywos" /><br /><sub>willywos</sub>](https://github.com/willywos)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=willywos) | [<img src="https://avatars.githubusercontent.com/jakesorce?s=100" width="100" alt="jakesorce" /><br /><sub>jakesorce</sub>](https://github.com/jakesorce)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=jakesorce) | [<img src="https://avatars.githubusercontent.com/jereinhardt?s=100" width="100" alt="jereinhardt" /><br /><sub>jereinhardt</sub>](https://github.com/jereinhardt)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=jereinhardt) | [<img src="https://avatars.githubusercontent.com/OvidiuToma?s=100" width="100" alt="OvidiuToma" /><br /><sub>OvidiuToma</sub>](https://github.com/OvidiuToma)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=OvidiuToma) | [<img src="https://avatars.githubusercontent.com/r33beers?s=100" width="100" alt="r33beers" /><br /><sub>r33beers</sub>](https://github.com/r33beers)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=r33beers) | [<img src="https://avatars.githubusercontent.com/ConnorBach?s=100" width="100" alt="ConnorBach" /><br /><sub>ConnorBach</sub>](https://github.com/ConnorBach)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=ConnorBach) | [<img src="https://avatars.githubusercontent.com/inqii?s=100" width="100" alt="inqii" /><br /><sub>inqii</sub>](https://github.com/inqii)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=inqii) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 
-| [<img src="https://avatars.githubusercontent.com/edmistond?s=100" width="100" alt="edmistond" /><br /><sub>edmistond</sub>](https://github.com/edmistond)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=edmistond) | [<img src="https://avatars.githubusercontent.com/chivoX?s=100" width="100" alt="chivoX" /><br /><sub>chivoX</sub>](https://github.com/chivoX)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=chivoX) | [<img src="https://avatars.githubusercontent.com/tripph?s=100" width="100" alt="tripph" /><br /><sub>tripph</sub>](https://github.com/tripph)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=tripph) | [<img src="https://avatars.githubusercontent.com/undefined?s=100" width="100" alt="" /><br /><sub></sub>](undefined)<br /> |
-| :---: | :---: | :---: | :---: |
+| [<img src="https://avatars.githubusercontent.com/ocristian?s=100" width="100" alt="ocristian" /><br /><sub>ocristian</sub>](https://github.com/ocristian)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=ocristian) | [<img src="https://avatars.githubusercontent.com/edmistond?s=100" width="100" alt="edmistond" /><br /><sub>edmistond</sub>](https://github.com/edmistond)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=edmistond) | [<img src="https://avatars.githubusercontent.com/chivoX?s=100" width="100" alt="chivoX" /><br /><sub>chivoX</sub>](https://github.com/chivoX)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=chivoX) | [<img src="https://avatars.githubusercontent.com/tripph?s=100" width="100" alt="tripph" /><br /><sub>tripph</sub>](https://github.com/tripph)<br />[💻](git@github.com:willywos/jobbyjobjob/commits?author=tripph) | [<img src="https://avatars.githubusercontent.com/undefined?s=100" width="100" alt="" /><br /><sub></sub>](undefined)<br /> |
+| :---: | :---: | :---: | :---: | :---: |
 <!-- Contributors table END -->
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification.
 
 (By clicking on 📖 you can see individual contributions)
-
-This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification.
