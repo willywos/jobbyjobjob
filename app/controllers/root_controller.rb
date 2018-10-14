@@ -3,6 +3,13 @@ class RootController < ApplicationController
 
   def index
     load_jobs
+
+    respond_to do |format|
+      format.html
+      format.js
+      format.rss { render layout: false }
+      format.json { render json: JSONAPI::Serializer.serialize(@job_postings, is_collection: true) }
+    end
   end
 
   def about
@@ -10,11 +17,17 @@ class RootController < ApplicationController
 
   def view_post
     @posting = JobPosting.find(params[:id])
-    history_item = {id: @posting.id, title: @posting.title}
-    session[:viewed_post_history] ||= []
-    # preventing duplicates; todo: might be good to move duplicate to the front instead of just ignoring?
-    unless session[:viewed_post_history].any? {|h| h["id"] == @posting.id}
-      session[:viewed_post_history].unshift(history_item)
+    respond_to do |format|
+      format.html do
+        history_item = {id: @posting.id, title: @posting.title}
+        session[:viewed_post_history] ||= []
+        # preventing duplicates; todo: might be good to move duplicate to the front instead of just ignoring?
+        unless session[:viewed_post_history].any? {|h| h["id"] == @posting.id}
+          session[:viewed_post_history].unshift(history_item)
+        end
+      end
+      format.json { render json: JSONAPI::Serializer.serialize(@posting) }
+      format.rss { render layout: false }
     end
   end
 

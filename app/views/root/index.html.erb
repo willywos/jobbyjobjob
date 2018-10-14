@@ -1,3 +1,6 @@
+<%= content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" title="Subscribe to Jobby Job Job Feeds" href="<%= root_url(query: params[:query], page: params[:page], format: :rss) %>" />
+<% end %>
 <div class="container">
   <div class="row">
     <div class="col-md-8">
@@ -94,6 +97,9 @@
                 <% end %>
               </ul>
             <% end %>
+            <strong>Subscribe & Share</strong> <br>
+            <%= link_to "", root_url(page: params[:page], query: params[:query], format: :rss), class: "fas fa-rss" %>
+            <%= link_to "{json.api}", root_url(page: params[:page], query: params[:query], format: :json) %>
           </div>
         </div>
       </div>
