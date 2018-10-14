@@ -81,6 +81,12 @@ This is a good project to work on if you want to do Hacktoberfest #Hacktoberfest
 
 Thanks goes to all of these wonderful people, who already contributed to the project:
 
+<!--
+curl command to generate contributors
+curl https://api.github.com/repos/willywos/jobbyjobjob/contributors | jq '.[] | .login + " " + .login + " " + .html_url + " " + "code"'
+
+There is a bug in the atom plugin for allcontributors. You have to add a '[' before the img tag that gets generated.
+-->
 
 <!-- Contributors START
 jakesorce jakesorce https://github.com/jakesorce code
