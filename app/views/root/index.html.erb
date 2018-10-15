@@ -87,16 +87,17 @@
             <% end %>
             <br><br>
             <strong>Total Number Of Jobs:</strong><br> <%= JobPosting.all.count %>
-            <% if session[:viewed_post_history] != nil && session[:viewed_post_history].length > 0 %>
+            <%= content_tag :div, id: 'history-items-list' do %>
               <h5><strong>Your View History:</strong></h5>
               <ul class="list-unstyled mb-0">
                 <% session[:viewed_post_history].each do |history| %>
-                  <li class="history-item">
+                  <li class="history-item" data-item-id="<%= history["id"] %>">
                     <%= link_to history["title"], "/post/" + history["id"].to_s, target: "_blank" %>
+                    <%= link_to "", "/remove_history_item/" + history["id"].to_s, method: :delete, remote: true, class: 'fas fa-trash' %>
                   </li>
                 <% end %>
               </ul>
-            <% end %>
+            <% end if session[:viewed_post_history] != nil && session[:viewed_post_history].length > 0 %>
             <strong>Subscribe & Share</strong> <br>
             <%= link_to "", root_url(page: params[:page], query: params[:query], format: :rss), class: "fas fa-rss" %>
             <%= link_to "{json.api}", root_url(page: params[:page], query: params[:query], format: :json) %>

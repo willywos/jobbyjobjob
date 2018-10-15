@@ -50,13 +50,23 @@ class RootController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def remove_history_item
+    @item = session[:viewed_post_history].detect { |e| e['id'] == params[:id].to_i }
+    session[:viewed_post_history].delete(@item)
+
+    respond_to do |format|
+      @empty_history_items = session[:viewed_post_history].empty?
+      format.js
+    end
+  end
+
   private
 
   def load_jobs
     @job_postings = if params[:query].blank? 
-      JobPosting.paginate(page: params[:page]).order("publish_date desc") 
-    else 
-      JobPosting.search_by_title(params[:query]).paginate(page: params[:page]).reorder("publish_date desc")
-    end
+                      JobPosting.paginate(page: params[:page]).order("publish_date desc") 
+                    else 
+                      JobPosting.search_by_title(params[:query]).paginate(page: params[:page]).reorder("publish_date desc")
+                    end
   end
 end
