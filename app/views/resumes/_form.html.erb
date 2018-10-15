@@ -11,7 +11,7 @@
         <% Resume::DEFAULT_DATA_TEMPLATE[:basics].each do |key, value| %>
           <% if value.class == String %>
             <%= ff.label key %>
-            <%= ff.text_field key, value: check_value(@resume.data, [key]), class: "form-control" %>
+            <%= ff.text_field key, value: check_value(@resume.data, [key.to_s]), class: "form-control" %>
           <% end %>
           <br/>
         <% end %>

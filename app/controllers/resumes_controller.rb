@@ -1,5 +1,6 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!
+  before_action :load_resume, only: [:edit, :update, :destroy]
 
   def index
     @resumes = current_user.resumes
@@ -18,15 +19,32 @@ class ResumesController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
+  def update
+    if @resume.update_attributes(resume_params)
+      redirect_to resumes_path and return
+    else
+      render :edit
+    end
+  end
+
   def destroy
-    @resume = Resume.find(params[:id])
     @resume.delete
   end
 
 
   private
 
+  def load_resume
+    @resume = Resume.find(params[:id])
+  end
+
   def resume_params
-    params.require(:resume).permit(:name, :user_id, :data)
+    new_params = params.require(:resume).permit(:name, :user_id, data: {})
+    new_params[:resume][:data] = new_params[:resume][:data].to_h if new_params[:resume].try(:[], :data).present?
+    new_params
   end
 end
