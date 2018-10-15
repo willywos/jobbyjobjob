@@ -14,6 +14,7 @@ class StackOverflowParser < JobParser
         description: item.summary,
         publish_date: item.published,
         company: get_company_from_title(item.title),
+        company_slug: get_company_from_title(item.title).parameterize,
         url: item.url,
         logo: "",
         job_board: "StackOverflow"

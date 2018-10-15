@@ -12,6 +12,7 @@ class RemoteOkParser < JobParser
         description: item["description"],
         publish_date: Time.at(item["epoch"].to_i).to_datetime.to_s,
         company: item["company"],
+        company_slug: item["company"].parameterize,
         url: item["url"],
         logo: item["logo"],
         job_board: "RemoteOk"

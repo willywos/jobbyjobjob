@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_07_061841) do
+ActiveRecord::Schema.define(version: 2018_10_15_112853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_10_07_061841) do
     t.datetime "updated_at", null: false
     t.string "job_board"
     t.boolean "is_saved", default: false
+    t.string "company_slug"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -55,4 +56,3 @@ ActiveRecord::Schema.define(version: 2018_10_07_061841) do
   end
 
 end
-

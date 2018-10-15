@@ -10,6 +10,7 @@ class GithubJobParser < JobParser
         description: item["description"],
         publish_date: item["created_at"],
         company: item["company"],
+        company_slug: item["company"].parameterize,
         url: item["url"],
         logo: item["company_logo"],
         job_board: "GitHub"
