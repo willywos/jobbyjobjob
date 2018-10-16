@@ -8,5 +8,9 @@ Rails.application.routes.draw do
   post '/search', to:"root#search", as:"search"
   get '/post/:id', to:"root#view_post", as:"view_post"
 
-  resources :resumes
+  resources :resumes do 
+    collection do 
+      get :new_category
+    end
+  end
 end

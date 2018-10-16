@@ -1,0 +1,2 @@
+<%- target = params[:category_target] %>
+$(".<%= target %> .actual_data").append("<%= j render partial: ('resumes/categories/' + target) %>");

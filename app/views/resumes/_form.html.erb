@@ -20,78 +20,25 @@
           <% Resume::DEFAULT_DATA_TEMPLATE[:basics][:location].each do |key, value| %>
             <% if value.class == String %>
               <%= fff.label key %>
-              <%= fff.text_field key, value: check_value(@resume.data, [key.to_s]), class: "form-control" %>
+              <%= fff.text_field key, value: check_value(@resume.data, ["basics", "location", key.to_s]), class: "form-control" %>
             <% end %>
             <br/>
           <% end %>
         <% end %>
       <% end %>
 
-      <div class="profiles">
-        <h3>
-          Profiles
-        </h3>
-        <%= link_to "Add", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-        <%= link_to "Remove", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-      </div>
-      <div class="work">
-        <h3>
-          Work
-        </h3>
-        <%= link_to "Add", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-        <%= link_to "Remove", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-      </div>
-      <div class="volunteer">
-        <h3>
-          Volunteer
-        </h3>
-        <%= link_to "Add", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-        <%= link_to "Remove", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-      </div>
-      <div class="education">
-        <h3>
-          Education
-        </h3>
-        <%= link_to "Add", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-        <%= link_to "Remove", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-      </div>
-      <div class="awards">
-        <h3>
-          Awards
-        </h3>
-        <%= link_to "Add", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-        <%= link_to "Remove", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-      </div>
-      <div class="skills">
-        <h3>
-          Skills
-        </h3>
-        <%= link_to "Add", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-        <%= link_to "Remove", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-      </div>
-      <div class="languages">
-        <h3>
-          Languages
-        </h3>
-        <%= link_to "Add", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-        <%= link_to "Remove", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-      </div>
-      <div class="interests">
-        <h3>
-          Interests
-        </h3>
-        <%= link_to "Add", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-        <%= link_to "Remove", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-      </div>
-      <div class="references">
-        <h3>
-          References
-        </h3>
-        <%= link_to "Add", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-        <%= link_to "Remove", "javascrit: void(0);", class: "btn btn-sm btn-default" %>
-      </div>
-      <br/>
+      <%= render partial: "resumes/category", locals: {category: "profiles"} %>
+      <%= render partial: "resumes/category", locals: {category: "work"} %>
+      <%= render partial: "resumes/category", locals: {category: "volunteer"} %>
+      <%= render partial: "resumes/category", locals: {category: "education"} %>
+      <%= render partial: "resumes/category", locals: {category: "awards"} %>
+      <%= render partial: "resumes/category", locals: {category: "skills"} %>
+      <%= render partial: "resumes/category", locals: {category: "languages"} %>
+      <%= render partial: "resumes/category", locals: {category: "interests"} %>
+      <%= render partial: "resumes/category", locals: {category: "references"} %>
       
+      <br/>
+
       <%= f.submit :save, class: "btn btn-primary" %>
     <% end %>
   </div>
