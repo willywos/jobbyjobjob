@@ -1,3 +1,6 @@
+<%= content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" title="Subscribe to Jobby Job Job Feeds" href="<%= view_post_url(@posting, format: :rss) %>" />
+<% end %>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-12 col-md-10 col-lg-10">
@@ -11,7 +14,7 @@
               <% end %>
             </div>
             <div class="media-body">
-              <div class="pull-right"><%= link_to 'Back', root_path, class:'btn btn-primary' %></div>
+              <div class="pull-right"><%= link_to 'Back', 'javascript:window.history.back()', class:'btn btn-primary' %></div>
               <h4 class="media-heading"><%= link_to @posting.title, @posting.url, target:"_blank" %> <br><small><%= @posting.company %> | <%= local_time(@posting.publish_date, '%B %e, %Y') %></small></h4>
               <hr>
               <span style="white-space: pre-line;">
@@ -20,6 +23,27 @@
               <hr>
               <div class="center">
                 <%= link_to 'View Original Job Post', @posting.url, target:"_blank", class:'btn btn-primary' %>
+              <div class="post-card">
+                <div class="post-card-content">
+                  <style type="text/css">
+                    ul br {
+                      display: none;
+                    }
+                    p {
+                      margin-top: 0;
+                      margin-bottom: 1em;
+                    }
+
+                  </style>
+                  <span id="posting">
+                  <%= auto_link(@posting.description_formatted_for_post.html_safe) %>
+                  </span>
+                </div>
+                <div class="post-card-details">
+                  <div class="center">
+                    <%= link_to 'View Original Job Post', @posting.url, target:"_blank", class:'btn btn-primary' %>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

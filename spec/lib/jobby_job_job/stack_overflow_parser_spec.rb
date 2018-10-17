@@ -11,6 +11,7 @@ RSpec.describe StackOverflowParser do
     expect(@parser.get_company_from_title("Software Development Engineer 2 at Comcast (Cambridge, MA)")).to eq('Comcast')
     expect(@parser.get_company_from_title('Systemadministrator_in at Technische Universit Wien (Wien, Österreich)')).to eq('Technische Universit Wien')
     expect(@parser.get_company_from_title('Backend-utvecklare at Lendo AB (Stockholm, Sweden)')).to eq('Lendo AB')
+    expect(@parser.get_company_from_title('Full Stack Rails and Javascript Web Developer  (Great Opportunity) at Facilities Exchange () (allows remote)')).to eq('Facilities Exchange')
   end
 
   it 'should get job from title' do

@@ -7,6 +7,7 @@ require_relative 'stack_overflow_parser'
 module JobbyJobJob
   class Parser
     attr_accessor :response, :parser, :job_site
+
     def initialize(res, job_site)
       @response = res
       @job_site = job_site
@@ -33,12 +34,26 @@ module JobbyJobJob
       @job_site[:format] == "json" ? parse_json : parse_rss
     end
 
+    def find_job_posting_by_url(url)
+      JobPosting.where(url: url).first
+    end
+
+    def find_job_posting_by_title(title, company)
+      JobPosting.where(company: company).where("title ILIKE ? OR title = ?", "%#{title}%", title).first
+    end
+
+    def is_already_posted?(job)
+      !find_job_posting_by_url(job[:url]).blank? ||
+      !find_job_posting_by_title(job[:title], job[:company]).blank?
+    end
+
     def process_mapping!
-      @parser.process(parse_body).each do |job|
-        unless job.blank?
-          job_posting = JobPosting.where(company: job[:company], title: job[:title]).first
-          if job_posting.blank?
-            JobPosting.create!(job)
+      parsed_data = parse_body
+      unless parsed_data.blank?
+        @parser.process(parsed_data).each do |job|
+          unless job.blank?
+            #puts "company: #{job[:company]} | title: #{job[:title]} is_already_posted?(job):#{is_already_posted?(job)}"
+            JobPosting.create!(job) unless is_already_posted?(job)
           end
         end
       end

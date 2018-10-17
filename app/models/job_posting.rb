@@ -31,6 +31,15 @@ class JobPosting < ApplicationRecord
                   },
                   :order_within_rank => "job_postings.publish_date DESC"
 
+  pg_search_scope :find_matching_by_title,
+                  :against => :title,
+                  :using => {
+                    :tsearch => { dictionary: 'english', :normalization => 4}
+                  },
+
+                  :order_within_rank => "job_postings.publish_date DESC"
+
+  scope :unsaved, -> {where(:is_saved => false)}
 
   def self.search_sort_by_pub_date(searchTerm)
     results = JobPosting.search_by_title(searchTerm)
@@ -50,5 +59,15 @@ class JobPosting < ApplicationRecord
 
   def random_color
     "%06x" % (company_initials.sum * 0xcd3)
+  end
+
+  def description_formatted
+    ActionView::Base.full_sanitizer.sanitize(self.description, :tags => %w(img br p), :attributes => %w(src style))
+  end
+
+  def description_formatted_for_post
+    #removes duplicate <br><br> and <p><p> tags that are grouped together.
+    self.description.gsub(/(<br>){2,}/, "")
+                    .gsub(/(<p>){2,}/, "")
   end
 end

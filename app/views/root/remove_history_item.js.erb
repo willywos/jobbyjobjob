@@ -1,0 +1,5 @@
+$(".history-item[data-item-id=<%= @item["id"] %>]").remove()
+
+<% if @empty_history_items %>
+    $("#history-items-list").remove()
+<% end %>
