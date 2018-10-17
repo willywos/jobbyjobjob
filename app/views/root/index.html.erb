@@ -87,8 +87,9 @@
             <% end %>
             <br><br>
             <strong>Total Number Of Jobs:</strong><br> <%= JobPosting.all.count %>
+            <br><br>
             <%= content_tag :div, id: 'history-items-list' do %>
-              <h5><strong>Your View History:</strong></h5>
+              <strong>Your View History:</strong>
               <ul class="list-unstyled mb-0">
                 <% session[:viewed_post_history].each do |history| %>
                   <li class="history-item" data-item-id="<%= history["id"] %>">
