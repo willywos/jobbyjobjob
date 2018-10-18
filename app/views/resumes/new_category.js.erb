@@ -1,2 +1,8 @@
-<%- target = params[:category_target] %>
-$(".<%= target %> .actual_data").append("<%= j render partial: ('resumes/categories/' + target) %>");
+<% target = params[:category_target] %>
+<% minor_target = params[:minor_object_target] %>
+<% random_index = params[:random_index] %>
+<% if minor_target.nil? %>
+  $(".category.<%= target %> .actual_data").append("<%= j render partial: ('resumes/categories/category_template'), locals: {category: target} %>");
+<% else %>
+  $(".category.<%= target %> .actual_data .object_data.<%= random_index %> .minor_actual_data").append("<%= j render partial: 'resumes/categories/minor_object_template', locals: {category: target, key: minor_target, value: ''} %>");
+<% end %>

@@ -1,0 +1,34 @@
+<% if !defined?(data_to_parse) %>
+  <% data_to_parse =[eval("Resume::#{category.upcase}_TEMPLATE")] %>
+<% end %>
+
+<% if data_to_parse.present? %>
+  <% random_index = SecureRandom.alphanumeric(10) %>
+  <% data_to_parse.each do |object|%>
+    <div class="object_data <%= random_index %>" >
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <%- object.each do |key, value| %>
+            <% if value.class == String %>
+              <%= label_tag "resume[data[#{category}]][][#{key}]", key %>
+              <%= text_field_tag "resume[data[#{category}]][][#{key}]", value, class: "form-control" %>
+            <% else %>
+              <h4>
+                <%= key.to_s.titleize %>
+              </h4>
+
+              <div class="minor_actual_data">
+                <% value.each do |minor_key|%>
+                  <%= render partial: "resumes/categories/minor_object_template", locals: {category: category, key: key, value: minor_key} %>
+                <% end %>
+              </div>
+
+              <%= link_to "Add", new_category_resumes_path(category_target: category, minor_object_target: key, random_index: random_index), class: "btn btn-sm btn-default", remote: true %>
+              <%= link_to "Remove", "javascript: removeClosestObject('#{category}', '.#{random_index} .minor_actual_data .minor_object_data');", class: "btn btn-sm btn-default" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>

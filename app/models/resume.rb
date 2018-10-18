@@ -90,12 +90,12 @@ class Resume < ApplicationRecord
     "fluency": ""
   }
 
-  INTERESTS = {
+  INTERESTS_TEMPLATE = {
     "name": "",
     "keywords": []
   }
 
-  REFERENCES = {
+  REFERENCES_TEMPLATE = {
     "name": "",
     "reference": ""
   }
