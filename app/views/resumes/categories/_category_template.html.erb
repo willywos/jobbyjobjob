@@ -8,6 +8,7 @@
     <div class="object_data <%= random_index %>" >
       <div class="panel panel-default">
         <div class="panel-body">
+          
           <%- object.each do |key, value| %>
             <% if value.class == String %>
               <%= label_tag "resume[data[#{category}]][][#{key}]", key %>

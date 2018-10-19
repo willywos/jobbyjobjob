@@ -1,4 +1,7 @@
 class Resume < ApplicationRecord
+  belongs_to :user
+  serialize :data
+
   DEFAULT_DATA_TEMPLATE = {
     "basics": {
       "name": "",
