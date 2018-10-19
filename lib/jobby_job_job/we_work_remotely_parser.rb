@@ -9,7 +9,7 @@ class WeWorkRemotelyParser < JobParser
     data.map! { |item|
       {
         title: item.title,
-        description: sanitize_html(item.summary),
+        description: item.summary,
         publish_date: item.published,
         company: get_company_from_title(item.title),
         url: item.url,

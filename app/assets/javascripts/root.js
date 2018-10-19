@@ -18,4 +18,5 @@ $(document).ready(function() {
   $('.flash').show(function() {
     setFlash();
   });
+  $('.job_pagination.add_remote a').attr('data-remote', 'true');
 });
