@@ -9,8 +9,13 @@ Rails.application.routes.draw do
   get '/post/:id', to:"root#view_post", as:"view_post"
 
   resources :resumes do 
+    member do 
+      get :download_json
+    end
     collection do 
       get :new_category
+      get :preview
+      post :preview
     end
   end
 end

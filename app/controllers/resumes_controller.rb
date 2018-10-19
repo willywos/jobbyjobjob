@@ -1,6 +1,7 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_resume, only: [:edit, :update, :destroy]
+  before_action :load_resume, only: [:edit, :update, :destroy, :download_json]
+  skip_before_action :verify_authenticity_token, :only => [:preview] # turbolinks issue solver
 
   def index
     @resumes = current_user.resumes
@@ -33,6 +34,15 @@ class ResumesController < ApplicationController
 
   def destroy
     @resume.delete
+  end
+
+  def preview
+    @json_data = (params[:resume].try(:[], :data) || {}).to_json
+    render :preview, layout: "document"
+  end
+
+  def download_json
+    send_data (@resume.data || {}).to_json, :type => 'application/json; header=present', :disposition => "attachment; filename=#{@resume.name}.json"
   end
 
 
