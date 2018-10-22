@@ -7,4 +7,17 @@ Rails.application.routes.draw do
   post '/remove_job/:id', to: 'root#remove_job'
   get '/post/:id', to:"root#view_post", as:"view_post"
   delete '/remove_history_item/:id', to: 'root#remove_history_item'
+
+  resources :resumes do 
+    member do 
+      get :download_json
+    end
+    collection do 
+      get :new_category
+      get :preview
+      post :preview
+    end
+  end
+  
+
 end

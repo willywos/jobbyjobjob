@@ -1,0 +1,11 @@
+<div class="category <%= category %>">
+  <h3>
+    <%= category.titleize %>
+  </h3>
+
+  <div class="actual_data">
+    <%= render partial: ('resumes/categories/category_template'), locals: {data_to_parse: @resume.data.try(:[], category), category: category} %>
+  </div>
+  <%= link_to "Add", new_category_resumes_path(category_target: category), class: "btn btn-sm btn-default", remote: true %>
+  <%= link_to "Remove", "javascript: removeClosestObject('#{category}');", class: "btn btn-sm btn-default" %>
+</div>

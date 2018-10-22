@@ -1,0 +1,14 @@
+<% content_for :boilerplate_tmp do %>
+  <script src="/assets/hbs_files/boilerplate.hbs" type="text/x-handlebars-template"></script>
+<% end %>
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+      $(document).autoBars(function() {
+        json = JSON.parse("<%== j @json_data %>");
+        var data = { "resume" : json};
+        var $html = $.handlebarTemplates['boilerplate'](data);
+        $('body').append($html);
+      });
+    })
+<% end %>
