@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post '/remove_job/:id', to: 'root#remove_job'
   get '/post/:id', to:"root#view_post", as:"view_post"
   delete '/remove_history_item/:id', to: 'root#remove_history_item'
+  get '/company/:company_slug', to: 'root#view_company', as: "view_company"
 end
