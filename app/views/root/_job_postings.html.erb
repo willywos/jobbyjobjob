@@ -20,11 +20,11 @@
         <div class='save-job-action'>
           <% if current_user && current_user.job_postings.include?(posting) %>
             <%= form_tag("/remove_job/#{posting.id}") do -%>
-              <div><%= submit_tag 'Remove Job', class: 'btn btn-danger' %></div>
+              <div><%= image_submit_tag('removeJobTape.jpg', alt: 'Remove Job', class: 'button-img') %></div>
             <% end -%>
           <% else %>
             <%= form_tag("/save_job/#{posting.id}") do -%>
-              <div><%= image_submit_tag('saveJobTape.jpg', alt: 'Save Job', class: 'save-img') %></div>
+              <div><%= image_submit_tag('saveJobTape.jpg', alt: 'Save Job', class: 'button-img') %></div>
             <% end -%>
           <% end %>
         </div>
