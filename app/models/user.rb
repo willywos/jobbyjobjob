@@ -20,4 +20,5 @@ class User < ApplicationRecord
 
   has_many :saved_jobs
   has_many :job_postings, through: :saved_jobs
+  has_many :resumes
 end

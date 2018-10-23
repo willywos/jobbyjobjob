@@ -1,0 +1,31 @@
+<div class='container'>
+  <div class="row">
+    <div class="col-xs-8">
+      <h1>My resumes</h1>
+    </div>
+    <div class="col-xs-4">
+      <h1>
+        <%= link_to 'New Resume', new_resume_path, class: 'btn btn-primary pull-right' %>
+      </h1>
+    </div>
+  </div>
+
+  <hr />
+  <% if @resumes.any? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Created at</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @resumes %>
+      </tbody>
+    </table>
+    
+  <% else %>
+    <h3>No resumes yet</h3>
+  <% end %>
+</div>

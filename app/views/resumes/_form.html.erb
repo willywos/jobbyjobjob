@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-4">
+    <%= form_for @resume, html: {class: "resume_form"} do |f| %>
+      <%= f.hidden_field :user_id %>
+      <%= f.label :name, "Resume Name" %>
+      <%= f.text_field :name, limit: 255, class: "form-control" %>
+
+      <hr/>
+
+      <%= f.fields_for "data[basics]" do |ff| %>
+        <% Resume::DEFAULT_DATA_TEMPLATE[:basics].each do |key, value| %>
+          <% if value.class == String %>
+            <%= ff.label key %>
+            <%= ff.text_field key, value: check_value(@resume.data, ["basics", key.to_s]), class: "form-control" %>
+            <br/>
+          <% end %>
+        <% end %>
+        <!-- location -->
+        <%= ff.fields_for "location" do |fff| %>
+          <% Resume::DEFAULT_DATA_TEMPLATE[:basics][:location].each do |key, value| %>
+            <% if value.class == String %>
+              <%= fff.label key %>
+              <%= fff.text_field key, value: check_value(@resume.data, ["basics", "location", key.to_s]), class: "form-control" %>
+            <% end %>
+            <br/>
+          <% end %>
+        <% end %>
+      <% end %>
+
+      <%= render partial: "resumes/category", locals: {category: "profiles"} %>
+      <%= render partial: "resumes/category", locals: {category: "work"} %>
+      <%= render partial: "resumes/category", locals: {category: "volunteer"} %>
+      <%= render partial: "resumes/category", locals: {category: "education"} %>
+      <%= render partial: "resumes/category", locals: {category: "awards"} %>
+      <%= render partial: "resumes/category", locals: {category: "skills"} %>
+      <%= render partial: "resumes/category", locals: {category: "languages"} %>
+      <%= render partial: "resumes/category", locals: {category: "interests"} %>
+      <%= render partial: "resumes/category", locals: {category: "references"} %>
+      
+      <br/>
+
+      <%= f.submit :save, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-8" >
+    <iframe name="preview" style="width: 100%; height: 600px;" data-target="preview" data-action="<%= preview_resumes_path %>" >
+
+    </iframe>
+  </div>
+</div>
+
+<%= javascript_tag do %>
+  initForm();
+<% end %>

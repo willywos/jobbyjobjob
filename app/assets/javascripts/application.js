@@ -16,4 +16,5 @@
 //= require local-time
 //= require jquery
 //= require bootstrap-sprockets
+//= require_tree ./libs
 //= require_tree .
