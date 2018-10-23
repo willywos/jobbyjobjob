@@ -24,7 +24,7 @@
             <% end -%>
           <% else %>
             <%= form_tag("/save_job/#{posting.id}") do -%>
-              <div><%= submit_tag 'Save Job', class: 'btn btn-primary' %></div>
+              <div><%= image_submit_tag('saveJobTape.jpg', alt: 'Save Job', class: 'save-img') %></div>
             <% end -%>
           <% end %>
         </div>
