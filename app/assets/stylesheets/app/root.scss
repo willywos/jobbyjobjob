@@ -35,9 +35,18 @@ a:not(.btn) {
   color: #d60cb1 !important;
 }
 
+.btn {
+ font-family: "Lazer 84", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+ background-color: #83ff00 !important;
+ border-color: #83ff00 !important;
+}
+
 .btn-primary {
-  background-color: #00d9ff !important;
-  border-color: #ababab !important;
+ color: #ff008e !important;
+}
+
+.btn.custom-remove {
+  color: #FF0000;
 }
 
 div.card-img-top {
@@ -131,8 +140,4 @@ li.history-item {
 .remove-img {
   width: 30px;
   height: 40px;
-}
-
-.btn {
- font-family: "Lazer 84", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 }

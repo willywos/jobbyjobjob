@@ -21,14 +21,14 @@
             <%= form_tag("/remove_job/#{posting.id}") do -%>
               <div class='btn-group mr-2'>
                 <%= image_submit_tag('gameBoy.jpg', alt: 'Remove Job', class: 'remove-img') %>
-                <%= submit_tag 'Remove Job', class: 'btn btn-link' %>
+                <%= submit_tag 'Remove Job', class: 'btn custom-remove' %>
               </div>
             <% end -%>
           <% else %>
             <%= form_tag("/save_job/#{posting.id}") do -%>
               <div class='btn-group mr-2'>
                 <%= image_submit_tag('tape.jpg', alt: 'Save Job', class:'save-img') %>
-                <%= submit_tag 'Save Job', class: 'btn btn-link' %>
+                <%= submit_tag 'Save Job', class: 'btn btn-primary' %>
               </div>
             <% end -%>
           <% end %>
