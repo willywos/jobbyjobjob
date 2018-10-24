@@ -1,6 +1,10 @@
 // Place all the styles related to the root controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: "Lazer 84";
+  src: url(/assets/Lazer84.ttf) format("truetype");
+}
 
 #auth-container {
   width: 100%;
@@ -127,4 +131,8 @@ li.history-item {
 .remove-img {
   width: 30px;
   height: 40px;
+}
+
+.btn {
+ font-family: "Lazer 84", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
 }
