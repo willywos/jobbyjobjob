@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   root 'root#index'
   get '/about', to:"root#about", as:"about"
   get '/my_jobs', to:"my_jobs#index"

@@ -45,7 +45,6 @@ class ResumesController < ApplicationController
     send_data (@resume.data || {}).to_json, :type => 'application/json; header=present', :disposition => "attachment; filename=#{@resume.name}.json"
   end
 
-
   private
 
   def load_resume

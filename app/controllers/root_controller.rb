@@ -76,10 +76,8 @@ class RootController < ApplicationController
   private
 
   def load_jobs
-    @job_postings = if params[:query].blank? 
-                      JobPosting.paginate(page: params[:page]).order("publish_date desc") 
-                    else 
-                      JobPosting.search_by_title(params[:query]).paginate(page: params[:page]).reorder("publish_date desc")
-                    end
+    @job_postings = params[:query].blank? ?
+                    JobPosting.paginate(page: params[:page]).order("publish_date desc") :  
+                    JobPosting.search_by_title(params[:query]).paginate(page: params[:page]).reorder("publish_date desc")
   end
 end
