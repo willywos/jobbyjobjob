@@ -37,16 +37,21 @@ a:not(.btn) {
 
 .btn {
  font-family: "Lazer 84", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+ letter-spacing: 2px;
  background-color: #83ff00 !important;
  border-color: #83ff00 !important;
-}
+ }
 
 .btn-primary {
  color: #ff008e !important;
 }
 
 .btn.custom-remove {
-  color: #FF0000;
+  color: #FF0000 !important;
+}
+
+.btn:hover {
+  color: black !important;
 }
 
 div.card-img-top {
