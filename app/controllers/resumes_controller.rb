@@ -1,5 +1,6 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource except: [:preview]
   before_action :load_resume, only: [:edit, :update, :destroy, :download_json]
   skip_before_action :verify_authenticity_token, :only => [:preview] # turbolinks issue solver
 
