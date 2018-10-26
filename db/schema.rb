@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2018_10_19_121713) do
     t.datetime "updated_at", null: false
     t.string "job_board"
     t.boolean "is_saved", default: false
+    t.string "company_slug"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|

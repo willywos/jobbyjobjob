@@ -31,6 +31,19 @@ class RootController < ApplicationController
     end
   end
 
+  def view_company
+    @job_postings = JobPosting.
+      where(company_slug: params[:company_slug]).
+      paginate(page: params[:page]).
+      order("publish_date desc")
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: JSONAPI::Serializer.serialize(@job_postings, is_collection: true) }
+      format.rss { render layout: false }
+    end
+  end
+
   def save_job
     job_posting = JobPosting.find_by(id: params[:id])
     saved_job = SavedJob.new(user_id: current_user.id, job_posting_id: job_posting.id)
@@ -63,10 +76,8 @@ class RootController < ApplicationController
   private
 
   def load_jobs
-    @job_postings = if params[:query].blank? 
-                      JobPosting.paginate(page: params[:page]).order("publish_date desc") 
-                    else 
-                      JobPosting.search_by_title(params[:query]).paginate(page: params[:page]).reorder("publish_date desc")
-                    end
+    @job_postings = params[:query].blank? ?
+                    JobPosting.paginate(page: params[:page]).order("publish_date desc") :  
+                    JobPosting.search_by_title(params[:query]).paginate(page: params[:page]).reorder("publish_date desc")
   end
 end

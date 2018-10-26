@@ -1,0 +1,40 @@
+<%= content_for :head do %>
+  <link rel="alternate" type="application/rss+xml" title="Subscribe to Jobby Job Job Feeds" href="<%= view_company_url(company_slug: params[:company_slug], format: :rss) %>" />
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="company_post">
+        <div class="media">
+          <div class="media-left">
+            <% if @job_postings.first.logo.blank? %>
+              <div class="card-img-top color-box" style="background:#<%= @job_postings.first.random_color %>;"><%= @job_postings.first.company_initials %></div>
+            <% else %>
+              <img class="card-img-top" src="<%= @job_postings.first.logo %>" alt="Card image cap">
+            <% end %>
+          </div>
+          <div class="media-body">
+
+            <div class="pull-right">
+              <%= link_to 'Back', 'javascript:window.history.back()', class:'btn btn-primary' %>
+            </div>
+
+            <h4>
+              <%= @job_postings.first.company %>
+            </h4>
+
+          </div>
+        </div>
+
+        <hr>
+
+        <%= render partial:"root/job_postings", locals: { job_postings: @job_postings } %>
+        <div class="job_pagination add_remote">
+          <%= will_paginate @job_postings %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

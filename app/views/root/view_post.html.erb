@@ -16,7 +16,7 @@
             </div>
             <div class="media-body">
               <div class="pull-right"><%= link_to 'Back', 'javascript:window.history.back()', class:'btn btn-primary' %></div>
-              <h4 class="media-heading"><%= link_to @posting.title, @posting.url, target:"_blank" %> <br><small><%= @posting.company %> | <%= local_time(@posting.publish_date, '%B %e, %Y') %></small></h4>
+              <h4 class="media-heading"><%= link_to @posting.title, @posting.url, target:"_blank" %> <br><small><%= link_to @posting.company, view_company_path(company_slug: @posting.company_slug) %> | <%= local_time(@posting.publish_date, '%B %e, %Y') %></small></h4>
               <hr>
               <div class="post-card">
                 <div class="post-card-content">
