@@ -1,6 +1,10 @@
 // Place all the styles related to the root controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@font-face {
+  font-family: "Lazer 84";
+  src: url(/assets/Lazer84.ttf) format("truetype");
+}
 
 #auth-container {
   width: 100%;
@@ -31,9 +35,23 @@ a:not(.btn) {
   color: #d60cb1 !important;
 }
 
+.btn {
+ font-family: "Lazer 84", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+ letter-spacing: 2px;
+ background-color: #83ff00 !important;
+ border-color: #83ff00 !important;
+ }
+
 .btn-primary {
-  background-color: #00d9ff !important;
-  border-color: #ababab !important;
+ color: #ff008e !important;
+}
+
+.btn.custom-remove {
+  color: #FF0000 !important;
+}
+
+.btn:hover {
+  color: black !important;
 }
 
 div.card-img-top {
@@ -117,4 +135,14 @@ li.history-item {
 
 .fas::before {
   font-family: Fontawesome
+}
+
+.save-img {
+  width: 50px;
+  height: 25px;
+}
+
+.remove-img {
+  width: 30px;
+  height: 40px;
 }
