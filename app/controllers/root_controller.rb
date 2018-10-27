@@ -57,7 +57,6 @@ class RootController < ApplicationController
 
   def remove_job
     current_user.saved_jobs.find_by(job_posting_id: params[:id]).destroy
-    flash[:notice] = "Job Was Successfully Removed!"
     respond_to do |format|
       format.html { redirect_back(fallback_location: root_path) }
       format.js
