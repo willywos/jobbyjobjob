@@ -1,5 +1,5 @@
 class RootController < ApplicationController
-  before_action :authenticate_user!, only: [:save_job]
+  before_action :authenticate_user!, only: [:save_job, :remove_job]
 
   def index
     load_jobs
@@ -47,26 +47,23 @@ class RootController < ApplicationController
   def save_job
     job_posting = JobPosting.find_by(id: params[:id])
     saved_job = SavedJob.new(user_id: current_user.id, job_posting_id: job_posting.id)
-    if saved_job.save
-      flash[:notice] = "Job Was Successfully Saved!"
-    else
-      flash[:alert] = saved_job.errors.full_messages.join(',')
+    respond_to do |format|
+      format.html { redirect_to root_path }
+      format.js
     end
-
-    redirect_to root_path
   end
 
   def remove_job
     current_user.saved_jobs.find_by(job_posting_id: params[:id]).destroy
-    flash[:notice] = "Job Was Successfully Removed!"
-
-    redirect_back(fallback_location: root_path)
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: root_path) }
+      format.js
+    end
   end
 
   def remove_history_item
     @item = session[:viewed_post_history].detect { |e| e['id'] == params[:id].to_i }
     session[:viewed_post_history].delete(@item)
-
     respond_to do |format|
       @empty_history_items = session[:viewed_post_history].empty?
       format.js

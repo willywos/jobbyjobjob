@@ -9,30 +9,25 @@
         <% end %>
       </div>
       <div class="media-body">
-        <h4 class="media-heading  col-md-8">
-          <%= link_to posting.title, view_post_path(posting) %>
-          <br>
-          <small>
-            <%= link_to posting.company, view_company_path(company_slug: posting.company_slug) %> | <%= local_time(posting.publish_date, '%B %e, %Y') %> | <%= link_to "View Post On #{posting.job_board}", posting.url, target:"_blank" %>
-          </small>
-        </h4>
-        <div class='save-job-action col-md-4'>
-          <% if current_user && current_user.job_postings.include?(posting) %>
-            <%= form_tag("/remove_job/#{posting.id}") do -%>
-              <div>
-                <%= submit_tag 'Remove  Job', class: 'btn custom-remove' %>
-              </div>
-            <% end -%>
-          <% else %>
-            <%= form_tag("/save_job/#{posting.id}") do -%>
-              <div>
-                <%= submit_tag 'Save Job', class: 'btn btn-primary' %>
-              </div>
-            <% end -%>
-          <% end %>
-        </div>
         <div class="col-md-12">
+          <h4 class="media-heading ">
+            <%= link_to posting.title, view_post_path(posting) %>
+            <br>
+            <small>
+              <%= link_to posting.company, view_company_path(company_slug: posting.company_slug) %> | <%= local_time(posting.publish_date, '%B %e, %Y') %> | <%= link_to "View Post On #{posting.job_board}", posting.url, target:"_blank" %>
+            </small>
+          </h4>
+          
           <%= truncate(posting.description_formatted, length: 300) %>
+          <div class="save-job-action">
+           <% if current_user %>
+            <% if current_user.job_postings.include?(posting) %>
+              <%= link_to 'Remove Job', remove_job_path(posting.id), remote: true, method: :post, class: 'btn btn-custom-remove', id: posting.id %>
+            <% else %>
+              <%= link_to 'Save Job', save_job_path(posting.id), remote: true, method: :post, class: 'btn btn-primary', id: posting.id %>
+            <% end %>
+          <% end %>
+          </div>
         </div>
       </div>
     </div>
