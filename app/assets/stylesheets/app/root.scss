@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @font-face {
   font-family: "Lazer 84";
-  src: url(/assets/Lazer84.ttf) format("truetype");
+  src: asset-url("Lazer84.ttf") format("truetype");
 }
 
 #auth-container {

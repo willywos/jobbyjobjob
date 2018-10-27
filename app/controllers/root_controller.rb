@@ -47,6 +47,8 @@ class RootController < ApplicationController
   def save_job
     job_posting = JobPosting.find_by(id: params[:id])
     saved_job = SavedJob.new(user_id: current_user.id, job_posting_id: job_posting.id)
+    saved_job.save
+     
     respond_to do |format|
       format.html { redirect_to root_path }
       format.js
@@ -55,6 +57,7 @@ class RootController < ApplicationController
 
   def remove_job
     current_user.saved_jobs.find_by(job_posting_id: params[:id]).destroy
+    flash[:notice] = "Job Was Successfully Removed!"
     respond_to do |format|
       format.html { redirect_back(fallback_location: root_path) }
       format.js
@@ -64,6 +67,7 @@ class RootController < ApplicationController
   def remove_history_item
     @item = session[:viewed_post_history].detect { |e| e['id'] == params[:id].to_i }
     session[:viewed_post_history].delete(@item)
+
     respond_to do |format|
       @empty_history_items = session[:viewed_post_history].empty?
       format.js
