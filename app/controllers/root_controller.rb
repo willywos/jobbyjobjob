@@ -1,5 +1,5 @@
 class RootController < ApplicationController
-  before_action :authenticate_user!, only: [:save_job]
+  before_action :authenticate_user!, only: [:save_job, :remove_job]
 
   def index
     load_jobs
