@@ -42,6 +42,9 @@ gem 'devise', '~> 4.5.0'
 # Pagination
 gem 'will_paginate', '~> 3.1.0'
 
+# Authorization gem
+gem 'cancancan', '~> 2.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -68,6 +71,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'rails-controller-testing'
 end
 
 group :development, :test do
