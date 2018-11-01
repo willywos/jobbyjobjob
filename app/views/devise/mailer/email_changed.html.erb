@@ -1,3 +1,5 @@
+<%= render partial: "header" %>
+
 <p>Hello <%= @email %>!</p>
 
 <% if @resource.try(:unconfirmed_email?) %>

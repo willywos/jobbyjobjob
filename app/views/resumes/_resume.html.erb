@@ -3,7 +3,7 @@
     <%= resume.name %>
   </td>
   <td>
-    <%= resume.created_at %>
+    <%= local_time(resume.created_at, format: '%B %e, %Y %l:%M%P') %>
   </td>
   <td>
     <%= link_to edit_resume_path(resume) do %>
