@@ -4,6 +4,12 @@ function populateSearch(term) {
   Rails.fire(elem, 'submit');
 }
 
+function toggleFilter() {
+  $(".filtering_container").toggleClass("visible-sm");
+  $(".filtering_container").toggleClass("visible-xs");
+}
+
+
 $(document).ready(function() {
   var flashTimeout;
   function setFlash() {
