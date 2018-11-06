@@ -147,3 +147,33 @@ li.history-item {
   width: 30px;
   height: 40px;
 }
+
+.side_info{
+  .toggle_button
+  {
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    padding-left: 10px;
+    padding-top: 7px;
+  }
+  @media (max-width: 991px)
+  {
+    .filtering_container {
+      position: fixed;
+      bottom: 70px;
+      right: 15px;
+      width: 50%;
+      background: white;
+      border: 1px solid #eee;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }  
+}
+
+
+
