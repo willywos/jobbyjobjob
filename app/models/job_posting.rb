@@ -58,7 +58,7 @@ class JobPosting < ApplicationRecord
   end
 
   def random_color
-    "%06x" % (company_initials.sum * 0xcd3)
+    company_initials.blank? ? "000" : "%06x" % (company_initials.sum * 0xcd3)
   end
 
   def description_formatted

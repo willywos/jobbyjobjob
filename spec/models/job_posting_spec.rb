@@ -33,4 +33,11 @@ RSpec.describe JobPosting, type: :model do
       expect(@posting.description_formatted_for_post).to eq(formatted_description)
     end
   end
+
+  describe "#random_color" do
+    it "should return back 000 for when company initials are blank" do
+      @posting = JobPosting.new({ company:"" })
+      expect(@posting.random_color).to eq("000")
+    end
+  end
 end
