@@ -2,6 +2,8 @@
 
 [https://jobbyjobjob.net/](https://jobbyjobjob.net/)
 
+<a href="https://codeclimate.com/github/willywos/jobbyjobjob/maintainability"><img src="https://api.codeclimate.com/v1/badges/0ef43dfe5a840d3328cb/maintainability" /></a>
+
 ## Description
 
 Jobby Job Job is a website that aggregates job postings from five different job boards.
