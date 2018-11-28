@@ -102,6 +102,4 @@ class Resume < ApplicationRecord
     "name": "",
     "reference": ""
   }
-
-  belongs_to :user
 end

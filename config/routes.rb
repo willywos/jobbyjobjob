@@ -10,12 +10,14 @@ Rails.application.routes.draw do
   get '/post/:id', to:"root#view_post", as:"view_post"
   delete '/remove_history_item/:id', to: 'root#remove_history_item'
   get '/company/:company_slug', to: 'root#view_company', as: "view_company"
+  get '/settings', to:"users#settings", as:"user_settings"
+  patch '/update_settings', to:"users#update_settings", as:"update_user_settings"
 
-  resources :resumes do 
-    member do 
+  resources :resumes do
+    member do
       get :download_json
     end
-    collection do 
+    collection do
       get :new_category
       get :preview
       post :preview
