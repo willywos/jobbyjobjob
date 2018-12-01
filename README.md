@@ -3,6 +3,7 @@
 [https://jobbyjobjob.net/](https://jobbyjobjob.net/)
 
 <a href="https://codeclimate.com/github/willywos/jobbyjobjob/maintainability"><img src="https://api.codeclimate.com/v1/badges/0ef43dfe5a840d3328cb/maintainability" /></a>
+[![Build Status](https://travis-ci.com/willywos/jobbyjobjob.svg?branch=master)](https://travis-ci.com/willywos/jobbyjobjob)
 
 ## Description
 
@@ -115,4 +116,3 @@ Contributors END -->
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification.
 
 (By clicking on 📖 you can see individual contributions)
-
