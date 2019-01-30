@@ -13,6 +13,7 @@
 #  updated_at   :datetime         not null
 #  job_board    :string
 #
+require 'jobby_job_job/html_to_plain_text'
 
 class JobPosting < ApplicationRecord
   include PgSearch
@@ -69,5 +70,9 @@ class JobPosting < ApplicationRecord
     #removes duplicate <br><br> and <p><p> tags that are grouped together.
     self.description.gsub(/(<br>){2,}/, "")
                     .gsub(/(<p>){2,}/, "")
+  end
+
+  def description_text
+    JobbyJobJob::HtmlToPlainText.new().convert_to_text(self.description)
   end
 end

@@ -5,6 +5,7 @@ class JobPostingSerializer
     :title,
     :logo,
     :description,
+    :description_text,
     :publish_date,
     :company,
     :job_board,
