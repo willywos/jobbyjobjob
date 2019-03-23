@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 # Devise For Login
-gem 'devise', '~> 4.5.0'
+gem 'devise', '>= 4.6.0'
 
 # Pagination
 gem 'will_paginate', '~> 3.1.0'
