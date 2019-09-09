@@ -1,11 +1,11 @@
 language: ruby
 rvm:
- - 2.5.1
+ - 2.6.4
 cache: bundler
 services:
   - postgresql
 addons:
-  postgresql: "9.5" 
+  postgresql: "9.5"
 before_script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
