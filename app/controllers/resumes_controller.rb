@@ -1,6 +1,5 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!
-  load_and_authorize_resource except: [:preview]
   before_action :load_resume, only: [:edit, :update, :destroy, :download_json]
   skip_before_action :verify_authenticity_token, :only => [:preview] # turbolinks issue solver
 
@@ -9,7 +8,7 @@ class ResumesController < ApplicationController
   end
 
   def new
-    @resume = Resume.new(user_id: current_user.id)  
+    @resume = Resume.new(user_id: current_user.id)
   end
 
   def create
@@ -22,7 +21,7 @@ class ResumesController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def update
@@ -49,7 +48,12 @@ class ResumesController < ApplicationController
   private
 
   def load_resume
-    @resume = Resume.find(params[:id])
+    @resume = current_user_resume(params[:id])
+    redirect_to resumes_path and return if @resume.blank?
+  end
+
+  def current_user_resume(id)
+    current_user.resumes.where(id: id).first
   end
 
   def resume_params

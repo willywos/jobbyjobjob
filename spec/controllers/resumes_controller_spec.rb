@@ -10,9 +10,11 @@ RSpec.describe ResumesController, type: :controller do
     @resume = FactoryBot.build_stubbed(:resume, name: "abc", user_id: @user.id)
     allow(request.env['warden']).to receive(:authenticate!).and_return(@user)
     allow(controller).to receive(:current_user).and_return(@user)
-    allow(Resume).to receive(:find).and_return(@resume)
+
     allow(@user).to receive(:resumes).and_return([@resume])
+    allow(controller).to receive(:current_user_resume).and_return(@resume)
     allow(@user2).to receive(:resumes).and_return([])
+
   end
 
   it "should #index access for @user" do

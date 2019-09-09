@@ -9,7 +9,7 @@ describe RootController, '#remove_history_item', type: :controller do
   end
 
   it 'response should be js' do
-    expect(response.content_type).to eq Mime[:js]
+    expect(response.content_type).to eq "text/javascript; charset=utf-8"
   end
 
   context 'with a valid request id' do
