@@ -166,7 +166,8 @@ GEM
       activerecord (>= 4.2)
       activesupport (>= 4.2)
     public_suffix (4.0.1)
-    puma (3.12.6)
+    puma (4.3.9)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -318,7 +319,7 @@ DEPENDENCIES
   local_time
   pg (>= 0.18, < 2.0)
   pg_search
-  puma (~> 3.12)
+  puma (~> 4.3)
   rails (~> 6.0.0)
   rails-controller-testing
   rails_autolink
