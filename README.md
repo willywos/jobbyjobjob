@@ -25,6 +25,7 @@ background task. The rake task builds the posts and creates the search indexes.
 - [https://weworkremotely.com/](https://weworkremotely.com/)
 - [https://remoteok.io/](https://remoteok.io/)
 - [https://stackoverflow.com/jobs/](https://stackoverflow.com/jobs/)
+- [https://okjob.io/](https://okjob.io/)
 
 
 ## Building the project
